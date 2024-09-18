@@ -1,0 +1,23 @@
+1.REQUEST_TOPIC = "request/+/service1"
+request:send from client 
++:macaddress+UUID
+service1:service name for example:temp,humi,verbration,PMS
+
+REQUEST_TOPIC example:
+"request/macaddress+UUID/service_temp"
+"request/macaddress+UUID/service_humi"
+"request/macaddress+UUID/service_verbration"
+"request/macaddress+UUID/service_PMS"
+
+2.on_message
+-根據service name 產生sqlite queue_db
+並將資料insert入queue
+service1_queue_db.db
+-trigger service 起來處理資料
+
+
+因為MQTT無實體的Queue
+因此將SQLITE的DB拿來當Queue
+on_message時，先將資料參入sqlite 因此將SQLITE的DB拿來當Queue
+在trigger service程式將資料依時間先後順序讀出進行處理
+請給我範例程式
