@@ -23,12 +23,6 @@ import sqliteQueue as queue
 
 
 
-
-
-
-
-
-
 # 當接收到消息時的回調函數
 def on_message(client, userdata, message):
     # 解碼消息
@@ -63,7 +57,7 @@ def call_service(executable, payload):
     """根據 YAML 中指定的可執行檔名呼叫對應的程式"""
     try:
         # 調用其他的 Python 程式，並傳遞 payload 作為參數
-        exefullpath = (f"{serviceYamlSetting.SERVICE_PATH}\{executable}")
+        exefullpath = (rf"{serviceYamlSetting.SERVICE_PATH}\{executable}")
         # subprocess.run(["python", executable, payload], check=True)
         subprocess.run(["python", exefullpath, payload], check=True)
         print(f"Service {executable} executed successfully")
@@ -71,17 +65,17 @@ def call_service(executable, payload):
         print(f"Service {executable} failed: {e}")
 
 # 當連接到 broker 時的回調函數
-def on_connect(client, userdata, flags, rc):
-    if rc == 0:
+def on_connect(client, userdata, flags, reason_code, properties):
+    if reason_code == 0:
         print("Connected to broker")
         client.subscribe(brokerYamlSetting.REQUEST_TOPIC)  # 訂閱所有以 "request/+/service" 開頭的主題
     else:
-        print(f"Failed to connect, return code {rc}")
+        print(f"Failed to connect, return code {reason_code}")
 
 
 def main():
     # 創建 MQTT 客戶端
-    client = mqtt.Client()
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     client.username_pw_set(brokerYamlSetting.USERNAME, brokerYamlSetting.PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message

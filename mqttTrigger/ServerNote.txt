@@ -32,7 +32,8 @@ action_flg:char(1)
 act_crr_id:char(32)
 -*需要確認TABLE是否存在
 
-
+5.paho-mqtt 2.1.0
+https://pypi.org/project/paho-mqtt/#callbacks
 
 
 因為MQTT無實體的Queue

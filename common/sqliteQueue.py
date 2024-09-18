@@ -1,11 +1,12 @@
 import os
 import sqlite3
+from datetime import datetime
 sqlite_queue_config_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..', 'queue'))
 
 def checkQueue(service):
     # 指定 SQLite 資料庫文件的路徑
-    db_path = f'{sqlite_queue_config_path}\{service}.db'
+    db_path = rf'{sqlite_queue_config_path}\{service}.db'
 
     # 檢查資料庫是否已經存在
     db_exists = os.path.exists(db_path)
@@ -30,8 +31,8 @@ def checkQueue(service):
 
 
         cursor.execute('''
-            CREATE TABLE queue (
-            T_stamp DATE DEFAULT (datetime('now','localtime')),
+            CREATE TABLE IF NOT EXISTS queue (
+            T_stamp TEXT,
             macaddress CHAR(17) DEFAULT '',
             crr_id CHAR(32) DEFAULT '',
             payload CHAR(3000) DEFAULT '',
@@ -54,6 +55,11 @@ def checkQueue(service):
 
     # 關閉連接
     conn.close()
+def getDateTime():
+    # 獲取當前系統的當地時間
+    local_time = datetime.now()
+    formatted_time = local_time.strftime('%Y-%m-%d %H:%M:%S.%f')
+    return local_time.strftime('%Y-%m-%d %H:%M:%S.%f')
 
 def inserDataToQueue(message,service):
     # 使用 "|" 分隔字串
@@ -64,20 +70,20 @@ def inserDataToQueue(message,service):
     action_flg="N"
 
     # 指定 SQLite 資料庫文件的路徑
-    db_path = f'{sqlite_queue_config_path}\{service}.db'
+    db_path = f'{sqlite_queue_config_path}\\{service}.db'
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
      # 進行其他資料庫操作
+
+    strSql=f'''INSERT INTO queue
+            (T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id)
+            VALUES('{getDateTime()}', '{macadress}','{crr_id}', '{payload}', '{action_flg}', '')
+            ;'''
     # cursor.execute(f'''INSERT INTO queue
     #         (T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id)
-    #         VALUES(strftime('%Y-%m-%d %H:%M:%S', 'now'), '00:1A:2B:3C:4D:5E', 'example_correlation_id', 'This is a sample payload.', 'A', 'example_action_correlation_id')
+    #         VALUES('{getDateTime}', '{macadress}','{crr_id}', '{payload}', '{action_flg}', '')
     #         ;''')
-    cursor.execute(f'''INSERT INTO queue
-            (T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id)
-            VALUES(strftime('%Y-%m-%d %H:%M:%S', 'now'), '{macadress}','{crr_id}', '{payload}', '{action_flg}', '')
-            ;''')
-    #tables = cursor.fetchall()
-    #print(f"{service}.db 中的表:", tables)
+    cursor.execute(strSql)
     conn.commit()
     # 關閉連接
     conn.close()

@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import uuid
 import psutil
+import time
 
 # MQTT Broker 設定
 BROKER_ADDRESS = "localhost"
@@ -40,13 +41,17 @@ def on_publish(client, userdata, mid):
 
 # 發送請求消息
 def send_request(service_name, payload):
-    request_topic = f"request/{strUUID}/{service_name}"
-    request_payload = f"{get_mac_address()}|{strUUID}|{payload}"
-    client.publish(request_topic, payload=request_payload)
-    print(f"Sent request to {request_topic} with payload: {request_payload}")
+    for i in range(100):
+        strUUID=str(uuid.uuid4())
+        request_topic = f"request/{strUUID}/{service_name}"
+        request_payload = f"{get_mac_address()}|{strUUID}|{payload}"
+        client.publish(request_topic, payload=request_payload)
+        print(f"Sent request to {request_topic} with payload: {request_payload}")
+        time.sleep(0.1)  # 控制發送速率，避免伺服端過載
 
 # 客戶端設定
 # CLIENT_ID = "Client1"
+# client = mqtt.Client()  # 使用指定的 Client ID
 client = mqtt.Client()  # 使用指定的 Client ID
 client.username_pw_set(USERNAME, PASSWORD)
 client.on_connect = on_connect
