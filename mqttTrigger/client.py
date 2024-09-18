@@ -1,10 +1,11 @@
 import paho.mqtt.client as mqtt
 import uuid
+import psutil
 
 # MQTT Broker 設定
-BROKER_ADDRESS = "172.27.51.73"
+BROKER_ADDRESS = "localhost"
 PORT = 1883
-REQUEST_TOPIC = "request/+/service"
+REQUEST_TOPIC = "request/+/service1"
 USERNAME = "eason"
 PASSWORD = "qazwsx"
 
@@ -12,6 +13,11 @@ strUUID=str(uuid.uuid4())
 # 生成唯一的 Correlation ID
 def generate_correlation_id():
     return str(uuid.uuid4())
+
+
+def get_mac_address():
+    mac = ':'.join(['{:02x}'.format((uuid.getnode() >> elements * 8) & 0xff) for elements in range(6)[::-1]])
+    return mac
 
 # 當連接到 broker 時的回調函數
 def on_connect(client, userdata, flags, rc):
@@ -35,7 +41,7 @@ def on_publish(client, userdata, mid):
 # 發送請求消息
 def send_request(service_name, payload):
     request_topic = f"request/{strUUID}/{service_name}"
-    request_payload = f"{strUUID}|{payload}"
+    request_payload = f"{get_mac_address()}|{strUUID}|{payload}"
     client.publish(request_topic, payload=request_payload)
     print(f"Sent request to {request_topic} with payload: {request_payload}")
 

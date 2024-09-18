@@ -1,0 +1,6 @@
+mqtt_config:
+  BROKER_ADDRESS: "localhost"
+  PORT: 1883
+  REQUEST_TOPIC: "request/+/+"
+  USERNAME: "eason"
+  PASSWORD: "qazwsx"

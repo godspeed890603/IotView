@@ -15,6 +15,25 @@ REQUEST_TOPIC example:
 service1_queue_db.db
 -trigger service 起來處理資料
 
+3.trigger 順序
+1.讀取broker yaml設定檔
+2.讀取sqlite queue yaml設定檔
+-create queue 的路徑
+
+4.sqlite "queue" table schema
+-create table
+t_stamp|macaddress|act_crr_id|payload|action_flg|act_crr_id
+       |17        |32        |3000   |1         |32
+t_stamp:T_Stamp
+macaddress:char(17)
+act_crr_id:char(32)
+payload:char(3000)
+action_flg:char(1)
+act_crr_id:char(32)
+-*需要確認TABLE是否存在
+
+
+
 
 因為MQTT無實體的Queue
 因此將SQLITE的DB拿來當Queue

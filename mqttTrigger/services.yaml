@@ -1,7 +1,0 @@
-services:
-  service1:
-    executable: "service1.py"
-  service2:
-    executable: "service2.py"
-  service3:
-    executable: "service3.py"
