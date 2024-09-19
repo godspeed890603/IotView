@@ -6,3 +6,5 @@ listener 1883
 
 
 ./mosquitto.exe -c mosquitto.conf -v
+
+C:\"Program Files"\mosquitto\
