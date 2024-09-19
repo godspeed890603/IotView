@@ -1,5 +1,9 @@
 {
     "python.analysis.extraPaths": [
-        "./common"
+        "./common",
+        "./com/comsub",
+        "./com/comtrx",
+        "./com/comsqlitetbl",
+        "./log"
     ]
 }

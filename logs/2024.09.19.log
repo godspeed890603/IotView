@@ -1,0 +1,1093 @@
+2024-09-19 16:38:27.403760 - broker server start......
+2024-09-19 16:38:27.406753 - mqtt setting......
+2024-09-19 16:38:27.409746 - connect mqtt ......
+2024-09-19 16:38:27.418720 - Connected to broker
+2024-09-19 16:38:27.451877 - payload: e4:b3:18:84:ee:d1|0386de11-16ec-446a-8802-6257d2cb65d7|Request data for service
+2024-09-19 16:38:27.453833 - addDataToQueue: e4:b3:18:84:ee:d1|0386de11-16ec-446a-8802-6257d2cb65d7|Request data for service,service1
+2024-09-19 16:38:28.236412 - 程式開始運行:service1
+2024-09-19 16:38:28.268509 - 程式結束:service1
+2024-09-19 16:38:29.103428 - execute successfully: service1.py
+2024-09-19 16:38:29.117306 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:29.140909 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:29.859577 - 程式開始運行:service1
+2024-09-19 16:38:29.898539 - 程式結束:service1
+2024-09-19 16:38:30.692144 - execute successfully: service1.py
+2024-09-19 16:38:30.694139 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:30.716116 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:31.446467 - 程式開始運行:service1
+2024-09-19 16:38:31.478381 - 程式結束:service1
+2024-09-19 16:38:32.315072 - execute successfully: service1.py
+2024-09-19 16:38:32.316990 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:32.340182 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:33.043969 - 程式開始運行:service1
+2024-09-19 16:38:33.077839 - 程式結束:service1
+2024-09-19 16:38:33.909244 - execute successfully: service1.py
+2024-09-19 16:38:33.911275 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:33.930184 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:34.646337 - 程式開始運行:service1
+2024-09-19 16:38:34.689219 - 程式結束:service1
+2024-09-19 16:38:35.502004 - execute successfully: service1.py
+2024-09-19 16:38:35.503999 - payload: e4:b3:18:84:ee:d1|2ffbceb5-b472-4f48-bd37-0dbb17c37bf2|Request data for service
+2024-09-19 16:38:35.506925 - addDataToQueue: e4:b3:18:84:ee:d1|2ffbceb5-b472-4f48-bd37-0dbb17c37bf2|Request data for service,service1
+2024-09-19 16:38:36.252318 - 程式開始運行:service1
+2024-09-19 16:38:36.256309 - 程式結束:service1
+2024-09-19 16:38:37.114538 - execute successfully: service1.py
+2024-09-19 16:38:37.116837 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:37.137906 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:37.849295 - 程式開始運行:service1
+2024-09-19 16:38:37.888723 - 程式結束:service1
+2024-09-19 16:38:38.709925 - execute successfully: service1.py
+2024-09-19 16:38:38.711816 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:38.735655 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:39.478452 - 程式開始運行:service1
+2024-09-19 16:38:39.518563 - 程式結束:service1
+2024-09-19 16:38:40.321757 - execute successfully: service1.py
+2024-09-19 16:38:40.323753 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:40.336685 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:41.037531 - 程式開始運行:service1
+2024-09-19 16:38:41.071603 - 程式結束:service1
+2024-09-19 16:38:41.910276 - execute successfully: service1.py
+2024-09-19 16:38:41.912272 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:41.930852 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:42.759464 - 程式開始運行:service1
+2024-09-19 16:38:42.799358 - 程式結束:service1
+2024-09-19 16:38:43.569053 - execute successfully: service1.py
+2024-09-19 16:38:43.571046 - payload: e4:b3:18:84:ee:d1|fc961c6d-3a42-43fb-acea-9566039644e1|Request data for service
+2024-09-19 16:38:43.577032 - addDataToQueue: e4:b3:18:84:ee:d1|fc961c6d-3a42-43fb-acea-9566039644e1|Request data for service,service1
+2024-09-19 16:38:44.465474 - 程式開始運行:service1
+2024-09-19 16:38:44.468469 - 程式結束:service1
+2024-09-19 16:38:45.232884 - execute successfully: service1.py
+2024-09-19 16:38:45.234877 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:45.257193 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:46.038430 - 程式開始運行:service1
+2024-09-19 16:38:46.076199 - 程式結束:service1
+2024-09-19 16:38:46.880974 - execute successfully: service1.py
+2024-09-19 16:38:46.883235 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:46.905767 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:47.624333 - 程式開始運行:service1
+2024-09-19 16:38:47.664317 - 程式結束:service1
+2024-09-19 16:38:48.486574 - execute successfully: service1.py
+2024-09-19 16:38:48.488572 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:48.509511 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:49.222221 - 程式開始運行:service1
+2024-09-19 16:38:49.260041 - 程式結束:service1
+2024-09-19 16:38:50.088925 - execute successfully: service1.py
+2024-09-19 16:38:50.090909 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:50.111038 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:50.822473 - 程式開始運行:service1
+2024-09-19 16:38:50.859947 - 程式結束:service1
+2024-09-19 16:38:51.656729 - execute successfully: service1.py
+2024-09-19 16:38:51.660097 - payload: e4:b3:18:84:ee:d1|c567257a-5e45-4093-92a6-6a869a6b2b4e|Request data for service
+2024-09-19 16:38:51.663386 - addDataToQueue: e4:b3:18:84:ee:d1|c567257a-5e45-4093-92a6-6a869a6b2b4e|Request data for service,service1
+2024-09-19 16:38:52.372977 - 程式開始運行:service1
+2024-09-19 16:38:52.377967 - 程式結束:service1
+2024-09-19 16:38:53.246966 - execute successfully: service1.py
+2024-09-19 16:38:53.248776 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:53.270229 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:54.148544 - 程式開始運行:service1
+2024-09-19 16:38:54.187919 - 程式結束:service1
+2024-09-19 16:38:55.018109 - execute successfully: service1.py
+2024-09-19 16:38:55.021093 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:55.046026 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:55.763309 - 程式開始運行:service1
+2024-09-19 16:38:55.795987 - 程式結束:service1
+2024-09-19 16:38:56.590274 - execute successfully: service1.py
+2024-09-19 16:38:56.592261 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:56.615302 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:57.313933 - 程式開始運行:service1
+2024-09-19 16:38:57.350774 - 程式結束:service1
+2024-09-19 16:38:58.175885 - execute successfully: service1.py
+2024-09-19 16:38:58.178119 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:38:58.201283 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:38:58.965544 - 程式開始運行:service1
+2024-09-19 16:38:59.000431 - 程式結束:service1
+2024-09-19 16:38:59.829162 - execute successfully: service1.py
+2024-09-19 16:38:59.831155 - payload: e4:b3:18:84:ee:d1|e3446f58-ee07-4818-91b4-ef52ab583082|Request data for service
+2024-09-19 16:38:59.834145 - addDataToQueue: e4:b3:18:84:ee:d1|e3446f58-ee07-4818-91b4-ef52ab583082|Request data for service,service1
+2024-09-19 16:39:00.568221 - 程式開始運行:service1
+2024-09-19 16:39:00.572185 - 程式結束:service1
+2024-09-19 16:39:01.431585 - execute successfully: service1.py
+2024-09-19 16:39:01.434614 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:01.451515 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:02.249106 - 程式開始運行:service1
+2024-09-19 16:39:02.481485 - 程式結束:service1
+2024-09-19 16:39:03.103547 - execute successfully: service1.py
+2024-09-19 16:39:03.105539 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:03.126777 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:03.856696 - 程式開始運行:service1
+2024-09-19 16:39:03.893910 - 程式結束:service1
+2024-09-19 16:39:04.725816 - execute successfully: service1.py
+2024-09-19 16:39:04.728808 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:04.752493 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:05.461155 - 程式開始運行:service1
+2024-09-19 16:39:05.495323 - 程式結束:service1
+2024-09-19 16:39:06.325455 - execute successfully: service1.py
+2024-09-19 16:39:06.328451 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:06.343456 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:07.064194 - 程式開始運行:service1
+2024-09-19 16:39:07.100734 - 程式結束:service1
+2024-09-19 16:39:07.920174 - execute successfully: service1.py
+2024-09-19 16:39:07.923165 - payload: e4:b3:18:84:ee:d1|f9bd05dc-c54d-4a2e-a723-1aa6512a38a4|Request data for service
+2024-09-19 16:39:07.926158 - addDataToQueue: e4:b3:18:84:ee:d1|f9bd05dc-c54d-4a2e-a723-1aa6512a38a4|Request data for service,service1
+2024-09-19 16:39:08.657792 - 程式開始運行:service1
+2024-09-19 16:39:08.663774 - 程式結束:service1
+2024-09-19 16:39:09.525894 - execute successfully: service1.py
+2024-09-19 16:39:09.527572 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:09.550120 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:10.263757 - 程式開始運行:service1
+2024-09-19 16:39:10.300421 - 程式結束:service1
+2024-09-19 16:39:11.126531 - execute successfully: service1.py
+2024-09-19 16:39:11.128537 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:11.145662 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:11.953835 - 程式開始運行:service1
+2024-09-19 16:39:11.991592 - 程式結束:service1
+2024-09-19 16:39:12.757608 - execute successfully: service1.py
+2024-09-19 16:39:12.759422 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:12.781361 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:13.499001 - 程式開始運行:service1
+2024-09-19 16:39:13.537530 - 程式結束:service1
+2024-09-19 16:39:14.360937 - execute successfully: service1.py
+2024-09-19 16:39:14.362936 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:14.385093 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:15.079494 - 程式開始運行:service1
+2024-09-19 16:39:15.115220 - 程式結束:service1
+2024-09-19 16:39:15.942418 - execute successfully: service1.py
+2024-09-19 16:39:15.944048 - payload: e4:b3:18:84:ee:d1|0548481b-6e00-4666-aba5-38370d44da13|Request data for service
+2024-09-19 16:39:15.948649 - addDataToQueue: e4:b3:18:84:ee:d1|0548481b-6e00-4666-aba5-38370d44da13|Request data for service,service1
+2024-09-19 16:39:16.678850 - 程式開始運行:service1
+2024-09-19 16:39:16.683838 - 程式結束:service1
+2024-09-19 16:39:17.545544 - execute successfully: service1.py
+2024-09-19 16:39:17.548019 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:17.568150 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:18.281099 - 程式開始運行:service1
+2024-09-19 16:39:18.314010 - 程式結束:service1
+2024-09-19 16:39:19.141176 - execute successfully: service1.py
+2024-09-19 16:39:19.144159 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:19.170207 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:19.889327 - 程式開始運行:service1
+2024-09-19 16:39:19.927614 - 程式結束:service1
+2024-09-19 16:39:20.781263 - execute successfully: service1.py
+2024-09-19 16:39:20.784260 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:20.805423 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:21.506198 - 程式開始運行:service1
+2024-09-19 16:39:21.542550 - 程式結束:service1
+2024-09-19 16:39:22.368565 - execute successfully: service1.py
+2024-09-19 16:39:22.371093 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:22.393230 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:23.101657 - 程式開始運行:service1
+2024-09-19 16:39:23.142211 - 程式結束:service1
+2024-09-19 16:39:23.970157 - execute successfully: service1.py
+2024-09-19 16:39:23.974146 - payload: e4:b3:18:84:ee:d1|48894fa2-8cbb-4f86-b588-f134620e2b0a|Request data for service
+2024-09-19 16:39:23.978136 - addDataToQueue: e4:b3:18:84:ee:d1|48894fa2-8cbb-4f86-b588-f134620e2b0a|Request data for service,service1
+2024-09-19 16:39:24.689772 - 程式開始運行:service1
+2024-09-19 16:39:24.695758 - 程式結束:service1
+2024-09-19 16:39:25.557629 - execute successfully: service1.py
+2024-09-19 16:39:25.560467 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:25.584233 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:26.294397 - 程式開始運行:service1
+2024-09-19 16:39:26.335455 - 程式結束:service1
+2024-09-19 16:39:27.158951 - execute successfully: service1.py
+2024-09-19 16:39:27.161729 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:27.184051 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:27.895779 - 程式開始運行:service1
+2024-09-19 16:39:27.932544 - 程式結束:service1
+2024-09-19 16:39:28.768758 - execute successfully: service1.py
+2024-09-19 16:39:28.772746 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:28.794272 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:29.614552 - 程式開始運行:service1
+2024-09-19 16:39:29.648461 - 程式結束:service1
+2024-09-19 16:39:30.476740 - execute successfully: service1.py
+2024-09-19 16:39:30.479692 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:30.504961 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:31.242987 - 程式開始運行:service1
+2024-09-19 16:39:31.276138 - 程式結束:service1
+2024-09-19 16:39:32.095658 - execute successfully: service1.py
+2024-09-19 16:39:32.099037 - payload: e4:b3:18:84:ee:d1|1aa395cb-2364-4bcd-aba7-8c7e593a34e0|Request data for service
+2024-09-19 16:39:32.102501 - addDataToQueue: e4:b3:18:84:ee:d1|1aa395cb-2364-4bcd-aba7-8c7e593a34e0|Request data for service,service1
+2024-09-19 16:39:32.819600 - 程式開始運行:service1
+2024-09-19 16:39:32.825583 - 程式結束:service1
+2024-09-19 16:39:33.656481 - execute successfully: service1.py
+2024-09-19 16:39:33.658429 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:33.680710 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:34.416665 - 程式開始運行:service1
+2024-09-19 16:39:34.457333 - 程式結束:service1
+2024-09-19 16:39:35.231916 - execute successfully: service1.py
+2024-09-19 16:39:35.234594 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:35.258845 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:35.969828 - 程式開始運行:service1
+2024-09-19 16:39:36.010013 - 程式結束:service1
+2024-09-19 16:39:36.840347 - execute successfully: service1.py
+2024-09-19 16:39:36.843339 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:36.866505 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:37.561360 - 程式開始運行:service1
+2024-09-19 16:39:37.599680 - 程式結束:service1
+2024-09-19 16:39:38.441474 - execute successfully: service1.py
+2024-09-19 16:39:38.445462 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:38.469184 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:39.209089 - 程式開始運行:service1
+2024-09-19 16:39:39.252005 - 程式結束:service1
+2024-09-19 16:39:40.069943 - execute successfully: service1.py
+2024-09-19 16:39:40.072662 - payload: e4:b3:18:84:ee:d1|0b68af13-829c-43f7-a33e-554170c6a9e2|Request data for service
+2024-09-19 16:39:40.076161 - addDataToQueue: e4:b3:18:84:ee:d1|0b68af13-829c-43f7-a33e-554170c6a9e2|Request data for service,service1
+2024-09-19 16:39:40.796565 - 程式開始運行:service1
+2024-09-19 16:39:40.803545 - 程式結束:service1
+2024-09-19 16:39:41.658156 - execute successfully: service1.py
+2024-09-19 16:39:41.660884 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:41.682812 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:42.396809 - 程式開始運行:service1
+2024-09-19 16:39:42.433875 - 程式結束:service1
+2024-09-19 16:39:43.258356 - execute successfully: service1.py
+2024-09-19 16:39:43.263209 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:43.286366 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:43.995681 - 程式開始運行:service1
+2024-09-19 16:39:44.031197 - 程式結束:service1
+2024-09-19 16:39:44.863114 - execute successfully: service1.py
+2024-09-19 16:39:44.866106 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:44.888104 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:45.597764 - 程式開始運行:service1
+2024-09-19 16:39:45.630729 - 程式結束:service1
+2024-09-19 16:39:46.465530 - execute successfully: service1.py
+2024-09-19 16:39:46.469532 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:46.493864 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:47.346412 - 程式開始運行:service1
+2024-09-19 16:39:47.381046 - 程式結束:service1
+2024-09-19 16:39:48.142993 - execute successfully: service1.py
+2024-09-19 16:39:48.146986 - payload: e4:b3:18:84:ee:d1|e0bb5508-d19d-4cee-ac2a-66790c659c6f|Request data for service
+2024-09-19 16:39:48.151970 - addDataToQueue: e4:b3:18:84:ee:d1|e0bb5508-d19d-4cee-ac2a-66790c659c6f|Request data for service,service1
+2024-09-19 16:39:48.983339 - 程式開始運行:service1
+2024-09-19 16:39:48.990306 - 程式結束:service1
+2024-09-19 16:39:49.831649 - execute successfully: service1.py
+2024-09-19 16:39:49.834642 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:49.857575 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:50.632001 - 程式開始運行:service1
+2024-09-19 16:39:50.662920 - 程式結束:service1
+2024-09-19 16:39:51.495123 - execute successfully: service1.py
+2024-09-19 16:39:51.498114 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:51.526786 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:52.326324 - 程式開始運行:service1
+2024-09-19 16:39:52.369615 - 程式結束:service1
+2024-09-19 16:39:53.185534 - execute successfully: service1.py
+2024-09-19 16:39:53.188522 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:53.217582 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:53.948679 - 程式開始運行:service1
+2024-09-19 16:39:53.991961 - 程式結束:service1
+2024-09-19 16:39:54.826293 - execute successfully: service1.py
+2024-09-19 16:39:54.830278 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:54.853382 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:55.561215 - 程式開始運行:service1
+2024-09-19 16:39:55.601567 - 程式結束:service1
+2024-09-19 16:39:56.432014 - execute successfully: service1.py
+2024-09-19 16:39:56.436000 - payload: e4:b3:18:84:ee:d1|84bb6c25-11bf-4733-a62b-9a48bfad4842|Request data for service
+2024-09-19 16:39:56.440987 - addDataToQueue: e4:b3:18:84:ee:d1|84bb6c25-11bf-4733-a62b-9a48bfad4842|Request data for service,service1
+2024-09-19 16:39:57.310330 - 程式開始運行:service1
+2024-09-19 16:39:57.317041 - 程式結束:service1
+2024-09-19 16:39:58.184738 - execute successfully: service1.py
+2024-09-19 16:39:58.187931 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:58.212473 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:39:58.947005 - 程式開始運行:service1
+2024-09-19 16:39:58.983264 - 程式結束:service1
+2024-09-19 16:39:59.826424 - execute successfully: service1.py
+2024-09-19 16:39:59.830412 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:39:59.854163 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:00.582219 - 程式開始運行:service1
+2024-09-19 16:40:00.622219 - 程式結束:service1
+2024-09-19 16:40:01.446455 - execute successfully: service1.py
+2024-09-19 16:40:01.449460 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:01.465902 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:02.178653 - 程式開始運行:service1
+2024-09-19 16:40:02.217549 - 程式結束:service1
+2024-09-19 16:40:03.042464 - execute successfully: service1.py
+2024-09-19 16:40:03.046450 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:03.067801 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:03.788761 - 程式開始運行:service1
+2024-09-19 16:40:03.832204 - 程式結束:service1
+2024-09-19 16:40:04.653778 - execute successfully: service1.py
+2024-09-19 16:40:04.656771 - payload: e4:b3:18:84:ee:d1|dafc2585-c50a-4006-9a90-829424ad4604|Request data for service
+2024-09-19 16:40:04.660756 - addDataToQueue: e4:b3:18:84:ee:d1|dafc2585-c50a-4006-9a90-829424ad4604|Request data for service,service1
+2024-09-19 16:40:05.373542 - 程式開始運行:service1
+2024-09-19 16:40:05.379522 - 程式結束:service1
+2024-09-19 16:40:06.234692 - execute successfully: service1.py
+2024-09-19 16:40:06.237682 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:06.259858 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:06.982961 - 程式開始運行:service1
+2024-09-19 16:40:07.021861 - 程式結束:service1
+2024-09-19 16:40:07.800534 - execute successfully: service1.py
+2024-09-19 16:40:07.803229 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:07.825714 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:08.539097 - 程式開始運行:service1
+2024-09-19 16:40:08.579640 - 程式結束:service1
+2024-09-19 16:40:09.399570 - execute successfully: service1.py
+2024-09-19 16:40:09.402276 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:09.424723 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:10.144466 - 程式開始運行:service1
+2024-09-19 16:40:10.180288 - 程式結束:service1
+2024-09-19 16:40:11.002577 - execute successfully: service1.py
+2024-09-19 16:40:11.005010 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:11.027826 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:11.759632 - 程式開始運行:service1
+2024-09-19 16:40:11.794100 - 程式結束:service1
+2024-09-19 16:40:12.612358 - execute successfully: service1.py
+2024-09-19 16:40:12.616244 - payload: e4:b3:18:84:ee:d1|e5c5f3d7-27fc-467d-8863-5b4c14bdd0e0|Request data for service
+2024-09-19 16:40:12.619751 - addDataToQueue: e4:b3:18:84:ee:d1|e5c5f3d7-27fc-467d-8863-5b4c14bdd0e0|Request data for service,service1
+2024-09-19 16:40:13.329380 - 程式開始運行:service1
+2024-09-19 16:40:13.335386 - 程式結束:service1
+2024-09-19 16:40:14.199181 - execute successfully: service1.py
+2024-09-19 16:40:14.201931 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:14.226931 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:15.026454 - 程式開始運行:service1
+2024-09-19 16:40:15.061362 - 程式結束:service1
+2024-09-19 16:40:15.875800 - execute successfully: service1.py
+2024-09-19 16:40:15.878458 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:15.902125 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:16.622414 - 程式開始運行:service1
+2024-09-19 16:40:16.661730 - 程式結束:service1
+2024-09-19 16:40:17.487824 - execute successfully: service1.py
+2024-09-19 16:40:17.490816 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:17.514440 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:18.223262 - 程式開始運行:service1
+2024-09-19 16:40:18.265137 - 程式結束:service1
+2024-09-19 16:40:19.088279 - execute successfully: service1.py
+2024-09-19 16:40:19.091232 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:19.113209 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:19.827624 - 程式開始運行:service1
+2024-09-19 16:40:19.867236 - 程式結束:service1
+2024-09-19 16:40:20.691988 - execute successfully: service1.py
+2024-09-19 16:40:20.694941 - payload: e4:b3:18:84:ee:d1|7856c116-0ce5-4948-a2c0-679b4b739d12|Request data for service
+2024-09-19 16:40:20.698933 - addDataToQueue: e4:b3:18:84:ee:d1|7856c116-0ce5-4948-a2c0-679b4b739d12|Request data for service,service1
+2024-09-19 16:40:21.415139 - 程式開始運行:service1
+2024-09-19 16:40:21.422121 - 程式結束:service1
+2024-09-19 16:40:22.235065 - execute successfully: service1.py
+2024-09-19 16:40:22.239057 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:22.263014 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:22.993589 - 程式開始運行:service1
+2024-09-19 16:40:23.026493 - 程式結束:service1
+2024-09-19 16:40:23.816052 - execute successfully: service1.py
+2024-09-19 16:40:23.818467 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:23.840201 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:24.576685 - 程式開始運行:service1
+2024-09-19 16:40:24.609601 - 程式結束:service1
+2024-09-19 16:40:25.439029 - execute successfully: service1.py
+2024-09-19 16:40:25.441812 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:25.465362 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:26.190310 - 程式開始運行:service1
+2024-09-19 16:40:26.234692 - 程式結束:service1
+2024-09-19 16:40:27.067943 - execute successfully: service1.py
+2024-09-19 16:40:27.071931 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:27.088552 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:27.867684 - 程式開始運行:service1
+2024-09-19 16:40:27.915096 - 程式結束:service1
+2024-09-19 16:40:28.730189 - execute successfully: service1.py
+2024-09-19 16:40:28.735178 - payload: e4:b3:18:84:ee:d1|3e429117-1656-4184-9249-6e1b50699eeb|Request data for service
+2024-09-19 16:40:28.739166 - addDataToQueue: e4:b3:18:84:ee:d1|3e429117-1656-4184-9249-6e1b50699eeb|Request data for service,service1
+2024-09-19 16:40:29.453881 - 程式開始運行:service1
+2024-09-19 16:40:29.461860 - 程式結束:service1
+2024-09-19 16:40:30.334215 - execute successfully: service1.py
+2024-09-19 16:40:31.348788 - Connected to broker
+2024-09-19 16:40:31.363150 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:31.385338 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:32.349172 - 程式開始運行:service1
+2024-09-19 16:40:32.401446 - 程式結束:service1
+2024-09-19 16:40:33.198469 - execute successfully: service1.py
+2024-09-19 16:40:33.203453 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:33.222736 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:34.040207 - 程式開始運行:service1
+2024-09-19 16:40:34.079950 - 程式結束:service1
+2024-09-19 16:40:34.933058 - execute successfully: service1.py
+2024-09-19 16:40:34.938048 - payload: e4:b3:18:84:ee:d1|bfdf73d8-ae2a-415b-a22a-c689513a6246|Request data for service
+2024-09-19 16:40:34.943036 - addDataToQueue: e4:b3:18:84:ee:d1|bfdf73d8-ae2a-415b-a22a-c689513a6246|Request data for service,service1
+2024-09-19 16:40:35.890379 - 程式開始運行:service1
+2024-09-19 16:40:35.898597 - 程式結束:service1
+2024-09-19 16:40:36.753150 - execute successfully: service1.py
+2024-09-19 16:40:36.756142 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:36.778401 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:37.519708 - 程式開始運行:service1
+2024-09-19 16:40:37.560596 - 程式結束:service1
+2024-09-19 16:40:38.388580 - execute successfully: service1.py
+2024-09-19 16:40:38.393286 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:38.421900 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:39.168234 - 程式開始運行:service1
+2024-09-19 16:40:39.205309 - 程式結束:service1
+2024-09-19 16:40:40.032032 - execute successfully: service1.py
+2024-09-19 16:40:40.032994 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:40.053936 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:40.780557 - 程式開始運行:service1
+2024-09-19 16:40:40.824442 - 程式結束:service1
+2024-09-19 16:40:41.589267 - execute successfully: service1.py
+2024-09-19 16:40:41.590230 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:41.615554 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:42.337077 - 程式開始運行:service1
+2024-09-19 16:40:42.370262 - 程式結束:service1
+2024-09-19 16:40:43.198708 - execute successfully: service1.py
+2024-09-19 16:40:43.200705 - payload: e4:b3:18:84:ee:d1|3091ceff-2203-4e3c-9c75-3432b9e481f7|Request data for service
+2024-09-19 16:40:43.202694 - addDataToQueue: e4:b3:18:84:ee:d1|3091ceff-2203-4e3c-9c75-3432b9e481f7|Request data for service,service1
+2024-09-19 16:40:43.935540 - 程式開始運行:service1
+2024-09-19 16:40:43.938571 - 程式結束:service1
+2024-09-19 16:40:44.802186 - execute successfully: service1.py
+2024-09-19 16:40:44.803197 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:44.827919 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:45.589297 - 程式開始運行:service1
+2024-09-19 16:40:45.619117 - 程式結束:service1
+2024-09-19 16:40:46.474914 - execute successfully: service1.py
+2024-09-19 16:40:46.476920 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:46.499416 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:47.356400 - 程式開始運行:service1
+2024-09-19 16:40:47.390324 - 程式結束:service1
+2024-09-19 16:40:48.219116 - execute successfully: service1.py
+2024-09-19 16:40:48.223112 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:48.243253 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:49.164156 - 程式開始運行:service1
+2024-09-19 16:40:49.209034 - 程式結束:service1
+2024-09-19 16:40:50.003270 - execute successfully: service1.py
+2024-09-19 16:40:50.005262 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:50.019224 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:50.933747 - 程式開始運行:service1
+2024-09-19 16:40:50.976159 - 程式結束:service1
+2024-09-19 16:40:51.972660 - execute successfully: service1.py
+2024-09-19 16:40:51.975651 - payload: e4:b3:18:84:ee:d1|eedc2c9a-db0b-478e-aa5f-71aa2d4dab0a|Request data for service
+2024-09-19 16:40:51.981638 - addDataToQueue: e4:b3:18:84:ee:d1|eedc2c9a-db0b-478e-aa5f-71aa2d4dab0a|Request data for service,service1
+2024-09-19 16:40:53.613029 - 程式開始運行:service1
+2024-09-19 16:40:53.620009 - 程式結束:service1
+2024-09-19 16:40:54.457508 - execute successfully: service1.py
+2024-09-19 16:40:54.459502 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:54.502220 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:55.408643 - 程式開始運行:service1
+2024-09-19 16:40:55.454203 - 程式結束:service1
+2024-09-19 16:40:56.273243 - execute successfully: service1.py
+2024-09-19 16:40:56.275234 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:56.305154 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:57.386751 - 程式開始運行:service1
+2024-09-19 16:40:57.449201 - 程式結束:service1
+2024-09-19 16:40:58.196776 - execute successfully: service1.py
+2024-09-19 16:40:58.198781 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:58.221998 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:40:59.048530 - 程式開始運行:service1
+2024-09-19 16:40:59.119353 - 程式結束:service1
+2024-09-19 16:40:59.931421 - execute successfully: service1.py
+2024-09-19 16:40:59.932984 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:40:59.956321 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:00.707911 - 程式開始運行:service1
+2024-09-19 16:41:00.738912 - 程式結束:service1
+2024-09-19 16:41:01.569620 - execute successfully: service1.py
+2024-09-19 16:41:01.573635 - payload: e4:b3:18:84:ee:d1|34a8408c-f350-4127-8737-547262d20c5a|Request data for service
+2024-09-19 16:41:01.575599 - addDataToQueue: e4:b3:18:84:ee:d1|34a8408c-f350-4127-8737-547262d20c5a|Request data for service,service1
+2024-09-19 16:41:02.324374 - 程式開始運行:service1
+2024-09-19 16:41:02.327408 - 程式結束:service1
+2024-09-19 16:41:03.191412 - execute successfully: service1.py
+2024-09-19 16:41:03.192374 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:03.212448 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:03.993003 - 程式開始運行:service1
+2024-09-19 16:41:04.032075 - 程式結束:service1
+2024-09-19 16:41:04.856744 - execute successfully: service1.py
+2024-09-19 16:41:04.858739 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:04.880782 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:05.644611 - 程式開始運行:service1
+2024-09-19 16:41:05.680380 - 程式結束:service1
+2024-09-19 16:41:06.510649 - execute successfully: service1.py
+2024-09-19 16:41:06.511647 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:06.535916 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:07.276916 - 程式開始運行:service1
+2024-09-19 16:41:07.315814 - 程式結束:service1
+2024-09-19 16:41:08.137902 - execute successfully: service1.py
+2024-09-19 16:41:08.139908 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:08.161479 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:08.942829 - 程式開始運行:service1
+2024-09-19 16:41:08.982179 - 程式結束:service1
+2024-09-19 16:41:09.804768 - execute successfully: service1.py
+2024-09-19 16:41:09.806762 - payload: e4:b3:18:84:ee:d1|9edbf559-1410-4979-b842-29f8796e7ef9|Request data for service
+2024-09-19 16:41:09.808756 - addDataToQueue: e4:b3:18:84:ee:d1|9edbf559-1410-4979-b842-29f8796e7ef9|Request data for service,service1
+2024-09-19 16:41:10.551215 - 程式開始運行:service1
+2024-09-19 16:41:10.554209 - 程式結束:service1
+2024-09-19 16:41:11.389939 - execute successfully: service1.py
+2024-09-19 16:41:11.391940 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:11.417530 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:12.223807 - 程式開始運行:service1
+2024-09-19 16:41:12.269122 - 程式結束:service1
+2024-09-19 16:41:13.106469 - execute successfully: service1.py
+2024-09-19 16:41:13.108426 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:13.130390 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:14.766553 - 程式開始運行:service1
+2024-09-19 16:41:14.808442 - 程式結束:service1
+2024-09-19 16:41:15.593834 - execute successfully: service1.py
+2024-09-19 16:41:15.595829 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:15.616787 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:16.636855 - 程式開始運行:service1
+2024-09-19 16:41:16.677741 - 程式結束:service1
+2024-09-19 16:41:17.499622 - execute successfully: service1.py
+2024-09-19 16:41:17.501618 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:17.526835 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:18.366584 - 程式開始運行:service1
+2024-09-19 16:41:18.399280 - 程式結束:service1
+2024-09-19 16:41:19.223136 - execute successfully: service1.py
+2024-09-19 16:41:19.225132 - payload: e4:b3:18:84:ee:d1|83c6e52d-4d45-49f7-9090-8dd2ce310a69|Request data for service
+2024-09-19 16:41:19.227126 - addDataToQueue: e4:b3:18:84:ee:d1|83c6e52d-4d45-49f7-9090-8dd2ce310a69|Request data for service,service1
+2024-09-19 16:41:20.547722 - 程式開始運行:service1
+2024-09-19 16:41:20.553704 - 程式結束:service1
+2024-09-19 16:41:21.328092 - execute successfully: service1.py
+2024-09-19 16:41:21.330087 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:21.347040 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:22.638282 - 程式開始運行:service1
+2024-09-19 16:41:22.680498 - 程式結束:service1
+2024-09-19 16:41:23.511334 - execute successfully: service1.py
+2024-09-19 16:41:23.519314 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:23.539820 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:24.831160 - 程式開始運行:service1
+2024-09-19 16:41:24.871985 - 程式結束:service1
+2024-09-19 16:41:25.753441 - execute successfully: service1.py
+2024-09-19 16:41:25.755436 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:25.909240 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:27.009060 - 程式開始運行:service1
+2024-09-19 16:41:27.049947 - 程式結束:service1
+2024-09-19 16:41:27.872546 - execute successfully: service1.py
+2024-09-19 16:41:27.884514 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:27.936376 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:28.882488 - 程式開始運行:service1
+2024-09-19 16:41:28.921971 - 程式結束:service1
+2024-09-19 16:41:29.734974 - execute successfully: service1.py
+2024-09-19 16:41:29.736969 - payload: e4:b3:18:84:ee:d1|9c1d971f-7fb4-4519-be81-3cf774795bac|Request data for service
+2024-09-19 16:41:29.737964 - addDataToQueue: e4:b3:18:84:ee:d1|9c1d971f-7fb4-4519-be81-3cf774795bac|Request data for service,service1
+2024-09-19 16:41:30.498293 - 程式開始運行:service1
+2024-09-19 16:41:30.503800 - 程式結束:service1
+2024-09-19 16:41:31.313508 - execute successfully: service1.py
+2024-09-19 16:41:31.314505 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:31.335759 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:32.310676 - 程式開始運行:service1
+2024-09-19 16:41:32.348574 - 程式結束:service1
+2024-09-19 16:41:33.181124 - execute successfully: service1.py
+2024-09-19 16:41:33.194088 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:33.215032 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:34.200107 - 程式開始運行:service1
+2024-09-19 16:41:34.231439 - 程式結束:service1
+2024-09-19 16:41:35.034639 - execute successfully: service1.py
+2024-09-19 16:41:35.036635 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:35.057715 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:36.105200 - 程式開始運行:service1
+2024-09-19 16:41:36.139440 - 程式結束:service1
+2024-09-19 16:41:36.870520 - execute successfully: service1.py
+2024-09-19 16:41:36.871480 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:36.894415 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:37.652420 - 程式開始運行:service1
+2024-09-19 16:41:37.686318 - 程式結束:service1
+2024-09-19 16:41:38.477629 - execute successfully: service1.py
+2024-09-19 16:41:38.478627 - payload: e4:b3:18:84:ee:d1|149d58d1-16ba-492b-9bdf-9008a6a836c2|Request data for service
+2024-09-19 16:41:38.482619 - addDataToQueue: e4:b3:18:84:ee:d1|149d58d1-16ba-492b-9bdf-9008a6a836c2|Request data for service,service1
+2024-09-19 16:41:39.258799 - 程式開始運行:service1
+2024-09-19 16:41:39.262334 - 程式結束:service1
+2024-09-19 16:41:40.144384 - execute successfully: service1.py
+2024-09-19 16:41:40.148374 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:40.169318 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:40.986841 - 程式開始運行:service1
+2024-09-19 16:41:41.037965 - 程式結束:service1
+2024-09-19 16:41:41.855818 - execute successfully: service1.py
+2024-09-19 16:41:41.856779 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:41.887260 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:42.623085 - 程式開始運行:service1
+2024-09-19 16:41:42.660262 - 程式結束:service1
+2024-09-19 16:41:43.443414 - execute successfully: service1.py
+2024-09-19 16:41:43.445447 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:43.461065 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:44.395784 - 程式開始運行:service1
+2024-09-19 16:41:44.432792 - 程式結束:service1
+2024-09-19 16:41:45.259807 - execute successfully: service1.py
+2024-09-19 16:41:45.262799 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:45.278756 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:46.023701 - 程式開始運行:service1
+2024-09-19 16:41:46.053065 - 程式結束:service1
+2024-09-19 16:41:46.893226 - execute successfully: service1.py
+2024-09-19 16:41:46.896224 - payload: e4:b3:18:84:ee:d1|f5f47704-1246-43a0-a99f-e82af4be5619|Request data for service
+2024-09-19 16:41:46.899210 - addDataToQueue: e4:b3:18:84:ee:d1|f5f47704-1246-43a0-a99f-e82af4be5619|Request data for service,service1
+2024-09-19 16:41:47.636172 - 程式開始運行:service1
+2024-09-19 16:41:47.641148 - 程式結束:service1
+2024-09-19 16:41:48.510131 - execute successfully: service1.py
+2024-09-19 16:41:48.511127 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:48.532263 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:49.307118 - 程式開始運行:service1
+2024-09-19 16:41:49.343019 - 程式結束:service1
+2024-09-19 16:41:50.136481 - execute successfully: service1.py
+2024-09-19 16:41:50.138473 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:50.160153 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:50.913767 - 程式開始運行:service1
+2024-09-19 16:41:50.947434 - 程式結束:service1
+2024-09-19 16:41:51.790333 - execute successfully: service1.py
+2024-09-19 16:41:51.792327 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:51.811943 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:52.606581 - 程式開始運行:service1
+2024-09-19 16:41:52.650480 - 程式結束:service1
+2024-09-19 16:41:53.465076 - execute successfully: service1.py
+2024-09-19 16:41:53.468041 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:53.489329 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:55.202360 - 程式開始運行:service1
+2024-09-19 16:41:55.396839 - 程式結束:service1
+2024-09-19 16:41:56.348464 - execute successfully: service1.py
+2024-09-19 16:41:56.353334 - payload: e4:b3:18:84:ee:d1|bfd63519-8bb1-4032-8663-74df99b9a044|Request data for service
+2024-09-19 16:41:56.357005 - addDataToQueue: e4:b3:18:84:ee:d1|bfd63519-8bb1-4032-8663-74df99b9a044|Request data for service,service1
+2024-09-19 16:41:57.402604 - 程式開始運行:service1
+2024-09-19 16:41:57.407591 - 程式結束:service1
+2024-09-19 16:41:58.259523 - execute successfully: service1.py
+2024-09-19 16:41:58.261520 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:58.281054 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:41:59.058186 - 程式開始運行:service1
+2024-09-19 16:41:59.117188 - 程式結束:service1
+2024-09-19 16:41:59.913762 - execute successfully: service1.py
+2024-09-19 16:41:59.916754 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:41:59.937700 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:00.998109 - 程式開始運行:service1
+2024-09-19 16:42:01.058378 - 程式結束:service1
+2024-09-19 16:42:01.965074 - execute successfully: service1.py
+2024-09-19 16:42:01.968062 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:01.999977 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:03.157836 - 程式開始運行:service1
+2024-09-19 16:42:03.187754 - 程式結束:service1
+2024-09-19 16:42:04.002153 - execute successfully: service1.py
+2024-09-19 16:42:04.004146 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:04.026136 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:04.781068 - 程式開始運行:service1
+2024-09-19 16:42:04.812981 - 程式結束:service1
+2024-09-19 16:42:05.644489 - execute successfully: service1.py
+2024-09-19 16:42:05.646484 - payload: e4:b3:18:84:ee:d1|0bc94993-4884-432f-9266-9525a38a559f|Request data for service
+2024-09-19 16:42:05.649481 - addDataToQueue: e4:b3:18:84:ee:d1|0bc94993-4884-432f-9266-9525a38a559f|Request data for service,service1
+2024-09-19 16:42:06.406383 - 程式開始運行:service1
+2024-09-19 16:42:06.409415 - 程式結束:service1
+2024-09-19 16:42:07.390318 - execute successfully: service1.py
+2024-09-19 16:42:07.392313 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:07.537922 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:08.819679 - 程式開始運行:service1
+2024-09-19 16:42:08.877525 - 程式結束:service1
+2024-09-19 16:42:09.676632 - execute successfully: service1.py
+2024-09-19 16:42:09.679624 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:09.705557 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:10.572426 - 程式開始運行:service1
+2024-09-19 16:42:10.608712 - 程式結束:service1
+2024-09-19 16:42:11.430642 - execute successfully: service1.py
+2024-09-19 16:42:11.432638 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:11.452227 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:12.185713 - 程式開始運行:service1
+2024-09-19 16:42:12.223214 - 程式結束:service1
+2024-09-19 16:42:13.044307 - execute successfully: service1.py
+2024-09-19 16:42:13.046305 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:13.064024 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:14.151746 - 程式開始運行:service1
+2024-09-19 16:42:14.222046 - 程式結束:service1
+2024-09-19 16:42:14.976387 - execute successfully: service1.py
+2024-09-19 16:42:14.978382 - payload: e4:b3:18:84:ee:d1|31b034be-391b-4567-91fc-58394d40b450|Request data for service
+2024-09-19 16:42:14.982371 - addDataToQueue: e4:b3:18:84:ee:d1|31b034be-391b-4567-91fc-58394d40b450|Request data for service,service1
+2024-09-19 16:42:16.217381 - 程式開始運行:service1
+2024-09-19 16:42:16.220412 - 程式結束:service1
+2024-09-19 16:42:17.091407 - execute successfully: service1.py
+2024-09-19 16:42:17.093483 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:17.114336 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:17.862713 - 程式開始運行:service1
+2024-09-19 16:42:17.915534 - 程式結束:service1
+2024-09-19 16:42:18.674571 - execute successfully: service1.py
+2024-09-19 16:42:18.675531 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:18.696292 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:19.565382 - 程式開始運行:service1
+2024-09-19 16:42:19.640481 - 程式結束:service1
+2024-09-19 16:42:20.419576 - execute successfully: service1.py
+2024-09-19 16:42:20.427553 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:20.461090 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:21.585163 - 程式開始運行:service1
+2024-09-19 16:42:21.642421 - 程式結束:service1
+2024-09-19 16:42:22.446701 - execute successfully: service1.py
+2024-09-19 16:42:22.450685 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:42:22.473622 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:42:23.367656 - 程式開始運行:service1
+2024-09-19 16:42:23.399432 - 程式結束:service1
+2024-09-19 16:43:58.717712 - broker server start......
+2024-09-19 16:43:58.718710 - mqtt setting......
+2024-09-19 16:43:58.719708 - connect mqtt ......
+2024-09-19 16:43:58.724729 - Connected to broker
+2024-09-19 16:43:58.779792 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:45:02.116434 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:45:02.878721 - 程式開始運行:service1
+2024-09-19 16:45:02.938797 - 程式結束:service1
+2024-09-19 16:45:03.738132 - execute successfully: service1.py
+2024-09-19 16:45:03.745931 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:45:08.765505 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:45:09.518961 - 程式開始運行:service1
+2024-09-19 16:45:09.562664 - 程式結束:service1
+2024-09-19 16:45:10.392926 - execute successfully: service1.py
+2024-09-19 16:45:10.401902 - payload: e4:b3:18:84:ee:d1|0127488a-14c8-464b-9c4e-6e5f043cde0e|Request data for service
+2024-09-19 16:45:54.724253 - addDataToQueue: e4:b3:18:84:ee:d1|0127488a-14c8-464b-9c4e-6e5f043cde0e|Request data for service,service1
+2024-09-19 16:45:55.558081 - 程式開始運行:service1
+2024-09-19 16:45:55.563067 - 程式結束:service1
+2024-09-19 16:45:56.433220 - execute successfully: service1.py
+2024-09-19 16:45:56.442872 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:46:08.607703 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:46:09.350328 - 程式開始運行:service1
+2024-09-19 16:46:09.385191 - 程式結束:service1
+2024-09-19 16:46:10.214835 - execute successfully: service1.py
+2024-09-19 16:46:11.228894 - Connected to broker
+2024-09-19 16:46:11.564132 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:46:14.867260 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:46:15.615813 - 程式開始運行:service1
+2024-09-19 16:46:15.647690 - 程式結束:service1
+2024-09-19 16:46:16.478235 - execute successfully: service1.py
+2024-09-19 16:46:16.486206 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:46:16.513323 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:46:17.229732 - 程式開始運行:service1
+2024-09-19 16:46:17.268629 - 程式結束:service1
+2024-09-19 16:46:18.094221 - execute successfully: service1.py
+2024-09-19 16:46:18.096215 - payload: e4:b3:18:84:ee:d1|e42e4d56-05b9-4167-8c23-03673bd93537|Request data for service
+2024-09-19 16:46:52.959662 - addDataToQueue: e4:b3:18:84:ee:d1|e42e4d56-05b9-4167-8c23-03673bd93537|Request data for service,service1
+2024-09-19 16:46:53.805042 - 程式開始運行:service1
+2024-09-19 16:46:53.811026 - 程式結束:service1
+2024-09-19 16:46:54.618799 - execute successfully: service1.py
+2024-09-19 16:46:54.626355 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:48:28.280828 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:48:29.016227 - 程式開始運行:service1
+2024-09-19 16:48:29.050064 - 程式結束:service1
+2024-09-19 16:48:29.884567 - execute successfully: service1.py
+2024-09-19 16:48:30.899967 - Connected to broker
+2024-09-19 16:48:31.322217 - payload: e4:b3:18:84:ee:d1|408eacb3-5f3e-4e55-b8e1-3e000e3053b2|Request data for service
+2024-09-19 16:48:49.035034 - addDataToQueue: e4:b3:18:84:ee:d1|408eacb3-5f3e-4e55-b8e1-3e000e3053b2|Request data for service,service1
+2024-09-19 16:48:49.785657 - 程式開始運行:service1
+2024-09-19 16:48:49.788687 - 程式結束:service1
+2024-09-19 16:48:50.653136 - execute successfully: service1.py
+2024-09-19 16:48:50.654093 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:26.313589 - broker server start......
+2024-09-19 16:49:26.316129 - mqtt setting......
+2024-09-19 16:49:26.318130 - connect mqtt ......
+2024-09-19 16:49:26.326108 - Connected to broker
+2024-09-19 16:49:26.439967 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:40.173802 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:41.069199 - 程式開始運行:service1
+2024-09-19 16:49:41.073191 - 程式結束:service1
+2024-09-19 16:49:41.890129 - execute successfully: service1.py
+2024-09-19 16:49:41.899105 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:41.907083 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:43.032936 - 程式開始運行:service1
+2024-09-19 16:49:43.037910 - 程式結束:service1
+2024-09-19 16:49:43.996001 - execute successfully: service1.py
+2024-09-19 16:49:43.997525 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:44.009372 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:45.569028 - 程式開始運行:service1
+2024-09-19 16:49:45.574013 - 程式結束:service1
+2024-09-19 16:49:46.378529 - execute successfully: service1.py
+2024-09-19 16:49:46.380523 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:46.382520 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:47.295603 - 程式開始運行:service1
+2024-09-19 16:49:47.300576 - 程式結束:service1
+2024-09-19 16:49:48.089684 - execute successfully: service1.py
+2024-09-19 16:49:48.090680 - payload: e4:b3:18:84:ee:d1|ec9d4b89-0247-44b9-abfe-5a2268cced91|Request data for service
+2024-09-19 16:49:48.116611 - addDataToQueue: e4:b3:18:84:ee:d1|ec9d4b89-0247-44b9-abfe-5a2268cced91|Request data for service,service1
+2024-09-19 16:49:49.204918 - 程式開始運行:service1
+2024-09-19 16:49:49.256781 - 程式結束:service1
+2024-09-19 16:49:50.123423 - execute successfully: service1.py
+2024-09-19 16:49:50.125417 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:50.132399 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:51.410478 - 程式開始運行:service1
+2024-09-19 16:49:51.416461 - 程式結束:service1
+2024-09-19 16:49:52.201478 - execute successfully: service1.py
+2024-09-19 16:49:52.204469 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:52.207462 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:53.205905 - 程式開始運行:service1
+2024-09-19 16:49:53.210892 - 程式結束:service1
+2024-09-19 16:49:54.061488 - execute successfully: service1.py
+2024-09-19 16:49:54.063484 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:54.065477 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:55.029006 - 程式開始運行:service1
+2024-09-19 16:49:55.034991 - 程式結束:service1
+2024-09-19 16:49:55.872857 - execute successfully: service1.py
+2024-09-19 16:49:55.875850 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:49:55.881808 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:49:57.650531 - 程式開始運行:service1
+2024-09-19 16:49:57.654520 - 程式結束:service1
+2024-09-19 16:49:58.485129 - execute successfully: service1.py
+2024-09-19 16:49:58.487126 - payload: e4:b3:18:84:ee:d1|ad1b102b-589f-4d4e-b063-5c3ebc6d546f|Request data for service
+2024-09-19 16:49:58.552174 - addDataToQueue: e4:b3:18:84:ee:d1|ad1b102b-589f-4d4e-b063-5c3ebc6d546f|Request data for service,service1
+2024-09-19 16:49:59.798305 - 程式開始運行:service1
+2024-09-19 16:49:59.976826 - 程式結束:service1
+2024-09-19 16:50:00.654743 - execute successfully: service1.py
+2024-09-19 16:50:00.657736 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:00.659732 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:01.587643 - 程式開始運行:service1
+2024-09-19 16:50:01.590633 - 程式結束:service1
+2024-09-19 16:50:02.452041 - execute successfully: service1.py
+2024-09-19 16:50:02.453037 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:02.455032 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:03.526895 - 程式開始運行:service1
+2024-09-19 16:50:03.531881 - 程式結束:service1
+2024-09-19 16:50:04.570615 - execute successfully: service1.py
+2024-09-19 16:50:04.574604 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:04.580588 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:06.012884 - 程式開始運行:service1
+2024-09-19 16:50:06.017871 - 程式結束:service1
+2024-09-19 16:50:06.795597 - execute successfully: service1.py
+2024-09-19 16:50:06.797605 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:06.802581 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:07.787499 - 程式開始運行:service1
+2024-09-19 16:50:07.793480 - 程式結束:service1
+2024-09-19 16:50:08.637580 - execute successfully: service1.py
+2024-09-19 16:50:08.639574 - payload: e4:b3:18:84:ee:d1|d9595b33-89e5-49d3-92be-633ce653e18b|Request data for service
+2024-09-19 16:50:08.661516 - addDataToQueue: e4:b3:18:84:ee:d1|d9595b33-89e5-49d3-92be-633ce653e18b|Request data for service,service1
+2024-09-19 16:50:09.569673 - 程式開始運行:service1
+2024-09-19 16:50:09.615623 - 程式結束:service1
+2024-09-19 16:50:10.557126 - execute successfully: service1.py
+2024-09-19 16:50:10.559123 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:10.572553 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:12.274872 - 程式開始運行:service1
+2024-09-19 16:50:12.279858 - 程式結束:service1
+2024-09-19 16:50:13.163179 - execute successfully: service1.py
+2024-09-19 16:50:13.166172 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:13.171159 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:14.096953 - 程式開始運行:service1
+2024-09-19 16:50:14.101945 - 程式結束:service1
+2024-09-19 16:50:14.965088 - execute successfully: service1.py
+2024-09-19 16:50:14.968079 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:14.971070 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:15.836771 - 程式開始運行:service1
+2024-09-19 16:50:15.843021 - 程式結束:service1
+2024-09-19 16:50:16.661639 - execute successfully: service1.py
+2024-09-19 16:50:16.663634 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:16.664633 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:17.459954 - 程式開始運行:service1
+2024-09-19 16:50:17.464948 - 程式結束:service1
+2024-09-19 16:50:18.334935 - execute successfully: service1.py
+2024-09-19 16:50:18.335931 - payload: e4:b3:18:84:ee:d1|519b0e4d-3b81-4eeb-8868-549a62acf73d|Request data for service
+2024-09-19 16:50:18.351886 - addDataToQueue: e4:b3:18:84:ee:d1|519b0e4d-3b81-4eeb-8868-549a62acf73d|Request data for service,service1
+2024-09-19 16:50:19.173209 - 程式開始運行:service1
+2024-09-19 16:50:19.213155 - 程式結束:service1
+2024-09-19 16:50:20.079612 - execute successfully: service1.py
+2024-09-19 16:50:20.082606 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:20.088587 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:21.136738 - 程式開始運行:service1
+2024-09-19 16:50:21.141726 - 程式結束:service1
+2024-09-19 16:50:21.958338 - execute successfully: service1.py
+2024-09-19 16:50:21.960332 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:21.962328 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:22.850777 - 程式開始運行:service1
+2024-09-19 16:50:22.855760 - 程式結束:service1
+2024-09-19 16:50:23.708807 - execute successfully: service1.py
+2024-09-19 16:50:23.709806 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:23.711729 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:24.549718 - 程式開始運行:service1
+2024-09-19 16:50:24.554705 - 程式結束:service1
+2024-09-19 16:50:25.401118 - execute successfully: service1.py
+2024-09-19 16:50:25.403114 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:25.415080 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:26.351011 - 程式開始運行:service1
+2024-09-19 16:50:26.355680 - 程式結束:service1
+2024-09-19 16:50:27.198337 - execute successfully: service1.py
+2024-09-19 16:50:27.201273 - payload: e4:b3:18:84:ee:d1|4995d0c8-99ba-40e6-84e5-130fa07c36e2|Request data for service
+2024-09-19 16:50:27.223640 - addDataToQueue: e4:b3:18:84:ee:d1|4995d0c8-99ba-40e6-84e5-130fa07c36e2|Request data for service,service1
+2024-09-19 16:50:28.074760 - 程式開始運行:service1
+2024-09-19 16:50:28.113022 - 程式結束:service1
+2024-09-19 16:50:28.944680 - execute successfully: service1.py
+2024-09-19 16:50:28.947671 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:28.950664 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:29.919584 - 程式開始運行:service1
+2024-09-19 16:50:29.933547 - 程式結束:service1
+2024-09-19 16:50:30.783875 - execute successfully: service1.py
+2024-09-19 16:50:30.785903 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:30.787871 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:31.672789 - 程式開始運行:service1
+2024-09-19 16:50:31.680772 - 程式結束:service1
+2024-09-19 16:50:32.491767 - execute successfully: service1.py
+2024-09-19 16:50:32.493763 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:32.495759 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:33.353158 - 程式開始運行:service1
+2024-09-19 16:50:33.357147 - 程式結束:service1
+2024-09-19 16:50:34.228476 - execute successfully: service1.py
+2024-09-19 16:50:34.230506 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:34.232462 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:35.180715 - 程式開始運行:service1
+2024-09-19 16:50:35.185707 - 程式結束:service1
+2024-09-19 16:50:36.049002 - execute successfully: service1.py
+2024-09-19 16:50:36.051009 - payload: e4:b3:18:84:ee:d1|66a7a841-8f42-42e3-ba95-0e56c4fe6690|Request data for service
+2024-09-19 16:50:36.072940 - addDataToQueue: e4:b3:18:84:ee:d1|66a7a841-8f42-42e3-ba95-0e56c4fe6690|Request data for service,service1
+2024-09-19 16:50:37.244856 - 程式開始運行:service1
+2024-09-19 16:50:37.310184 - 程式結束:service1
+2024-09-19 16:50:38.160473 - execute successfully: service1.py
+2024-09-19 16:50:38.163464 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:38.166457 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:39.294637 - 程式開始運行:service1
+2024-09-19 16:50:39.298628 - 程式結束:service1
+2024-09-19 16:50:40.175687 - execute successfully: service1.py
+2024-09-19 16:50:40.178341 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:40.181182 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:41.258116 - 程式開始運行:service1
+2024-09-19 16:50:41.262121 - 程式結束:service1
+2024-09-19 16:50:42.113664 - execute successfully: service1.py
+2024-09-19 16:50:42.117656 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:42.122663 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:43.009561 - 程式開始運行:service1
+2024-09-19 16:50:43.012553 - 程式結束:service1
+2024-09-19 16:50:43.876666 - execute successfully: service1.py
+2024-09-19 16:50:43.878660 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:43.880655 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:44.605651 - 程式開始運行:service1
+2024-09-19 16:50:44.608679 - 程式結束:service1
+2024-09-19 16:50:45.499496 - execute successfully: service1.py
+2024-09-19 16:50:45.502459 - payload: e4:b3:18:84:ee:d1|c8b203f9-f993-4aeb-a6b6-8701716bfd7d|Request data for service
+2024-09-19 16:50:45.527432 - addDataToQueue: e4:b3:18:84:ee:d1|c8b203f9-f993-4aeb-a6b6-8701716bfd7d|Request data for service,service1
+2024-09-19 16:50:46.394703 - 程式開始運行:service1
+2024-09-19 16:50:46.432235 - 程式結束:service1
+2024-09-19 16:50:47.263616 - execute successfully: service1.py
+2024-09-19 16:50:47.266611 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:47.270598 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:48.616317 - 程式開始運行:service1
+2024-09-19 16:50:48.621317 - 程式結束:service1
+2024-09-19 16:50:49.441764 - execute successfully: service1.py
+2024-09-19 16:50:49.449744 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:49.461710 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:50.489627 - 程式開始運行:service1
+2024-09-19 16:50:50.493615 - 程式結束:service1
+2024-09-19 16:50:51.374077 - execute successfully: service1.py
+2024-09-19 16:50:51.376072 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:51.378068 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:52.148239 - 程式開始運行:service1
+2024-09-19 16:50:52.152228 - 程式結束:service1
+2024-09-19 16:50:53.013887 - execute successfully: service1.py
+2024-09-19 16:50:53.016879 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:53.018873 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:53.727310 - 程式開始運行:service1
+2024-09-19 16:50:53.730306 - 程式結束:service1
+2024-09-19 16:50:54.656754 - execute successfully: service1.py
+2024-09-19 16:50:54.658757 - payload: e4:b3:18:84:ee:d1|26a281b6-91b8-4722-a792-fb907bc44942|Request data for service
+2024-09-19 16:50:54.679693 - addDataToQueue: e4:b3:18:84:ee:d1|26a281b6-91b8-4722-a792-fb907bc44942|Request data for service,service1
+2024-09-19 16:50:55.670388 - 程式開始運行:service1
+2024-09-19 16:50:55.718263 - 程式結束:service1
+2024-09-19 16:50:56.509756 - execute successfully: service1.py
+2024-09-19 16:50:56.511737 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:56.515292 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:57.253303 - 程式開始運行:service1
+2024-09-19 16:50:57.258288 - 程式結束:service1
+2024-09-19 16:50:58.051601 - execute successfully: service1.py
+2024-09-19 16:50:58.053393 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:58.055392 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:50:58.785375 - 程式開始運行:service1
+2024-09-19 16:50:58.789412 - 程式結束:service1
+2024-09-19 16:50:59.659176 - execute successfully: service1.py
+2024-09-19 16:50:59.661210 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:50:59.663167 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:00.620681 - 程式開始運行:service1
+2024-09-19 16:51:00.623709 - 程式結束:service1
+2024-09-19 16:51:01.478429 - execute successfully: service1.py
+2024-09-19 16:51:01.479427 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:01.481419 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:02.218792 - 程式開始運行:service1
+2024-09-19 16:51:02.222782 - 程式結束:service1
+2024-09-19 16:51:03.079052 - execute successfully: service1.py
+2024-09-19 16:51:03.080029 - payload: e4:b3:18:84:ee:d1|4661b4ca-b784-4749-b966-d7a7333dd82c|Request data for service
+2024-09-19 16:51:03.101074 - addDataToQueue: e4:b3:18:84:ee:d1|4661b4ca-b784-4749-b966-d7a7333dd82c|Request data for service,service1
+2024-09-19 16:51:03.817895 - 程式開始運行:service1
+2024-09-19 16:51:03.855146 - 程式結束:service1
+2024-09-19 16:51:04.674681 - execute successfully: service1.py
+2024-09-19 16:51:04.676672 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:04.678669 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:05.415242 - 程式開始運行:service1
+2024-09-19 16:51:05.418198 - 程式結束:service1
+2024-09-19 16:51:06.342825 - execute successfully: service1.py
+2024-09-19 16:51:06.344819 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:06.346814 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:07.193865 - 程式開始運行:service1
+2024-09-19 16:51:07.197853 - 程式結束:service1
+2024-09-19 16:51:08.046594 - execute successfully: service1.py
+2024-09-19 16:51:08.048589 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:08.049583 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:08.845768 - 程式開始運行:service1
+2024-09-19 16:51:08.850755 - 程式結束:service1
+2024-09-19 16:51:09.712515 - execute successfully: service1.py
+2024-09-19 16:51:09.714511 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:09.716774 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:10.917640 - 程式開始運行:service1
+2024-09-19 16:51:10.922627 - 程式結束:service1
+2024-09-19 16:51:11.803390 - execute successfully: service1.py
+2024-09-19 16:51:11.805385 - payload: e4:b3:18:84:ee:d1|33308adc-9de4-44f7-98ff-cdf9fef0b63c|Request data for service
+2024-09-19 16:51:11.825227 - addDataToQueue: e4:b3:18:84:ee:d1|33308adc-9de4-44f7-98ff-cdf9fef0b63c|Request data for service,service1
+2024-09-19 16:51:12.933868 - 程式開始運行:service1
+2024-09-19 16:51:12.980743 - 程式結束:service1
+2024-09-19 16:51:13.816827 - execute successfully: service1.py
+2024-09-19 16:51:13.847765 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:13.856725 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:15.262298 - 程式開始運行:service1
+2024-09-19 16:51:15.268281 - 程式結束:service1
+2024-09-19 16:51:16.139582 - execute successfully: service1.py
+2024-09-19 16:51:16.140545 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:51:16.143330 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:51:17.289086 - 程式開始運行:service1
+2024-09-19 16:51:17.295086 - 程式結束:service1
+2024-09-19 16:51:18.175940 - execute successfully: service1.py
+2024-09-19 16:51:18.204860 - payload: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:52:43.159524 - addDataToQueue: request|e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:52:44.855407 - 程式開始運行:service1
+2024-09-19 16:52:44.859393 - 程式結束:service1
+2024-09-19 16:52:45.715208 - execute successfully: service1.py
+2024-09-19 16:52:46.743086 - Connected to broker
+2024-09-19 16:52:48.465634 - payload: e4:b3:18:84:ee:d1|fc81df64-61ab-4a14-98e3-b562aee1ee7e|Request data for service
+2024-09-19 16:52:48.481129 - addDataToQueue: e4:b3:18:84:ee:d1|fc81df64-61ab-4a14-98e3-b562aee1ee7e|Request data for service,service1
+2024-09-19 16:52:49.889380 - 程式開始運行:service1
+2024-09-19 16:52:50.116757 - 程式結束:service1
+2024-09-19 16:52:50.826319 - execute successfully: service1.py
+2024-09-19 16:52:50.828316 - payload: e4:b3:18:84:ee:d1|b3516aa2-bc47-4f17-9005-e926deaa9555|Request data for service
+2024-09-19 16:52:50.847263 - addDataToQueue: e4:b3:18:84:ee:d1|b3516aa2-bc47-4f17-9005-e926deaa9555|Request data for service,service1
+2024-09-19 16:52:51.687058 - 程式開始運行:service1
+2024-09-19 16:52:51.725955 - 程式結束:service1
+2024-09-19 16:52:52.530927 - execute successfully: service1.py
+2024-09-19 16:52:52.532957 - payload: e4:b3:18:84:ee:d1|920d0d1c-17b7-460b-a3a3-18571f6f7b05|Request data for service
+2024-09-19 16:52:52.564038 - addDataToQueue: e4:b3:18:84:ee:d1|920d0d1c-17b7-460b-a3a3-18571f6f7b05|Request data for service,service1
+2024-09-19 16:52:53.350662 - 程式開始運行:service1
+2024-09-19 16:52:53.382578 - 程式結束:service1
+2024-09-19 16:52:54.228643 - execute successfully: service1.py
+2024-09-19 16:52:54.549821 - payload: e4:b3:18:84:ee:d1|7ffa0b8c-f890-4948-a1ef-d14e8da4e59c|Request data for service
+2024-09-19 16:52:54.572722 - addDataToQueue: e4:b3:18:84:ee:d1|7ffa0b8c-f890-4948-a1ef-d14e8da4e59c|Request data for service,service1
+2024-09-19 16:52:55.539435 - 程式開始運行:service1
+2024-09-19 16:52:55.567359 - 程式結束:service1
+2024-09-19 16:52:56.395532 - execute successfully: service1.py
+2024-09-19 16:52:56.589619 - payload: e4:b3:18:84:ee:d1|e29e4786-c24d-437a-9694-995b119dd1fc|Request data for service
+2024-09-19 16:52:56.609567 - addDataToQueue: e4:b3:18:84:ee:d1|e29e4786-c24d-437a-9694-995b119dd1fc|Request data for service,service1
+2024-09-19 16:52:57.387675 - 程式開始運行:service1
+2024-09-19 16:52:57.428372 - 程式結束:service1
+2024-09-19 16:52:58.247976 - execute successfully: service1.py
+2024-09-19 16:52:58.706910 - payload: e4:b3:18:84:ee:d1|091600a0-c7c1-4ec4-ba34-210617a1ac43|Request data for service
+2024-09-19 16:52:58.727280 - addDataToQueue: e4:b3:18:84:ee:d1|091600a0-c7c1-4ec4-ba34-210617a1ac43|Request data for service,service1
+2024-09-19 16:52:59.681427 - 程式開始運行:service1
+2024-09-19 16:52:59.792128 - 程式結束:service1
+2024-09-19 16:53:00.567764 - execute successfully: service1.py
+2024-09-19 16:53:00.710381 - payload: e4:b3:18:84:ee:d1|21adb599-2b6d-430f-938b-74ddeb754d8e|Request data for service
+2024-09-19 16:53:00.733321 - addDataToQueue: e4:b3:18:84:ee:d1|21adb599-2b6d-430f-938b-74ddeb754d8e|Request data for service,service1
+2024-09-19 16:53:01.794907 - 程式開始運行:service1
+2024-09-19 16:53:01.833840 - 程式結束:service1
+2024-09-19 16:53:02.664973 - execute successfully: service1.py
+2024-09-19 16:53:02.738786 - payload: e4:b3:18:84:ee:d1|b23b3733-a10d-4ed9-8234-ab89e58766c6|Request data for service
+2024-09-19 16:53:02.774692 - addDataToQueue: e4:b3:18:84:ee:d1|b23b3733-a10d-4ed9-8234-ab89e58766c6|Request data for service,service1
+2024-09-19 16:53:03.735017 - 程式開始運行:service1
+2024-09-19 16:53:03.767930 - 程式結束:service1
+2024-09-19 16:53:04.476512 - execute successfully: service1.py
+2024-09-19 16:53:04.754169 - payload: e4:b3:18:84:ee:d1|44129813-10d6-48c4-b068-cd7d9674f6f3|Request data for service
+2024-09-19 16:53:04.778277 - addDataToQueue: e4:b3:18:84:ee:d1|44129813-10d6-48c4-b068-cd7d9674f6f3|Request data for service,service1
+2024-09-19 16:53:06.062221 - 程式開始運行:service1
+2024-09-19 16:53:06.134028 - 程式結束:service1
+2024-09-19 16:53:06.949086 - execute successfully: service1.py
+2024-09-19 16:53:06.951080 - payload: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:53:06.971030 - addDataToQueue: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:53:07.952035 - 程式開始運行:service1
+2024-09-19 16:53:07.996731 - 程式結束:service1
+2024-09-19 16:53:08.763721 - execute successfully: service1.py
+2024-09-19 16:53:08.765676 - payload: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:53:08.786107 - addDataToQueue: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:53:09.625172 - 程式開始運行:service1
+2024-09-19 16:53:09.661211 - 程式結束:service1
+2024-09-19 16:53:10.526797 - execute successfully: service1.py
+2024-09-19 16:53:10.527760 - payload: e4:b3:18:84:ee:d1|bc4c5df1-bdfd-4193-8075-838b5ee057d0|Request data for service
+2024-09-19 16:53:10.562262 - addDataToQueue: e4:b3:18:84:ee:d1|bc4c5df1-bdfd-4193-8075-838b5ee057d0|Request data for service,service1
+2024-09-19 16:53:11.792247 - 程式開始運行:service1
+2024-09-19 16:53:11.857071 - 程式結束:service1
+2024-09-19 16:53:13.070166 - execute successfully: service1.py
+2024-09-19 16:53:13.072161 - payload: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:53:13.136987 - addDataToQueue: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:53:14.074675 - 程式開始運行:service1
+2024-09-19 16:53:14.109311 - 程式結束:service1
+2024-09-19 16:53:14.945507 - execute successfully: service1.py
+2024-09-19 16:53:14.947503 - payload: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:53:14.970066 - addDataToQueue: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:53:15.702689 - 程式開始運行:service1
+2024-09-19 16:53:15.740575 - 程式結束:service1
+2024-09-19 16:53:16.570995 - execute successfully: service1.py
+2024-09-19 16:53:16.571958 - payload: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:53:16.596814 - addDataToQueue: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1
+2024-09-19 16:53:17.495983 - 程式開始運行:service1
+2024-09-19 16:53:17.529820 - 程式結束:service1
+2024-09-19 16:53:18.456357 - execute successfully: service1.py
+2024-09-19 16:53:18.459350 - payload: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1
+2024-09-19 16:53:18.481291 - addDataToQueue: e4:b3:18:84:ee:d1|a0f491e4-74f8-4f07-86d3-cd53dbe8c9ce|service1,service1

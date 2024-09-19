@@ -1,5 +1,11 @@
 import yaml
 import os
+import sys
+# 將 config 資料夾加入 Python 的搜尋路徑
+log_config_path = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'log'))
+sys.path.append(log_config_path)
+import loging
 
 # 宣告變數，但不給予預設值
 BROKER_ADDRESS = None
@@ -9,8 +15,6 @@ PASSWORD = None
 REQUEST_TOPIC = None
 
 # 讀取 YAML 檔案
-
-
 def load_config_from_yaml(yaml_path):
     global BROKER_ADDRESS, PORT, USERNAME, PASSWORD, REQUEST_TOPIC
 

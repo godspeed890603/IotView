@@ -1,6 +1,11 @@
 import yaml
 import os
 import sys
+# 將 config 資料夾加入 Python 的搜尋路徑
+log_config_path = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'log'))
+sys.path.append(log_config_path)
+import loging
 
 SERVICE_CONFIG = None
 SERVICE_PATH = None

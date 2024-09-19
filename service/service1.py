@@ -3,6 +3,11 @@ import sys
 import os
 import sqlite3
 import ctypes
+# 將 config 資料夾加入 Python 的搜尋路徑
+log_config_path = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'log'))
+sys.path.append(log_config_path)
+import loging
 
 
 def main():
@@ -17,7 +22,7 @@ def main():
     # 取得不包含副檔名的檔案名稱
     service_name = os.path.splitext(os.path.basename(service_path))[0]
 
-    print("程式名稱（不含副檔名）:", service_name)
+    #print("程式名稱（不含副檔名）:", service_name)
 
 
       # 指定 SQLite 資料庫文件的路徑
@@ -73,20 +78,27 @@ def main():
 
 
 if __name__ == "__main__":
+      # 取得當前程式的完整路徑
+    service_path = __file__
+    # 取得不包含副檔名的檔案名稱
+    service_name = os.path.splitext(os.path.basename(service_path))[0]
     # 創建全局互斥體
     mutex = ctypes.windll.kernel32.CreateMutexW(None, False, "Global\\MyUniqueMutexName")
 
     # 檢查互斥體是否已存在
     if ctypes.windll.kernel32.GetLastError() == 183:
         print("程式已經在運行")
+        loging.log_message(f"程式已經在運行:{service_name}")
         sys.exit(1)
 
     try:
         print("程式開始運行")
+        loging.log_message(f"程式開始運行:{service_name}")
         main()
         # 你的程式邏輯在這裡
     finally:
         ctypes.windll.kernel32.ReleaseMutex(mutex)
         ctypes.windll.kernel32.CloseHandle(mutex)
+        loging.log_message(f"程式結束:{service_name}")
         print("程式結束")
  
