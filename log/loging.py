@@ -1,13 +1,18 @@
+import sys
 import os
 from datetime import datetime
+
 
 # 設定日誌檔案大小上限 5MB
 MAX_LOG_SIZE = 5 * 1024 * 1024
 
 def get_log_filename():
     """返回當前日期的日誌檔案名稱"""
+    log_config_path = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'log'))
+    sys.path.append(log_config_path)
     log_date = datetime.now().strftime('%Y.%m.%d')
-    log_dir = "logs"
+    log_dir = f"{log_config_path}\\logs"
     os.makedirs(log_dir, exist_ok=True)
     
     # 檢查是否有現有的文件
@@ -24,12 +29,16 @@ def get_log_filename():
 def log_message(message):
     """將訊息寫入日誌，並且檢查是否需要換檔"""
     log_filename = get_log_filename()
-    
+    print(f"log_message1")
     # 使用 'a' 模式附加寫入
     with open(log_filename, 'a') as f:
         # 紀錄時間和訊息
+        # print(f"log_message2")
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        # print(f"log_message3")
         f.write(f"{current_time} - {message}\n")
+        # print(f"log_message4")
+        f.flush()  # 強制寫入硬盤
 
 if __name__ == "__main__":
     # 測試記錄 100 條訊息

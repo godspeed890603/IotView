@@ -48,7 +48,7 @@ def send_request(service_name, payload):
         request_payload = f"{get_mac_address()}|{strUUID}|{payload}"
         client.publish(request_topic, payload=request_payload)
         print(f"Sent request to {request_topic} with payload: {request_payload}")
-        time.sleep(2)  # 控制發送速率，避免伺服端過載
+        time.sleep(0.5)  # 控制發送速率，避免伺服端過載
 
 # 客戶端設定
 # CLIENT_ID = "Client1"
