@@ -1,0 +1,8 @@
+./mosquitto_passwd.exe -U usrlist.txt
+
+allow_anonymous false
+password_file C:\Program Files\mosquitto\usrlist.txt
+listener 1883
+
+
+./mosquitto.exe -c mosquitto.conf -v
