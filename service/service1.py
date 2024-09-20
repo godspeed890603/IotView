@@ -3,6 +3,8 @@ import sys
 import os
 import sqlite3
 import ctypes
+import json
+
 # 將 config 資料夾加入 Python 的搜尋路徑
 log_config_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..', 'log'))
@@ -106,9 +108,26 @@ def main():
         print("-----------")
 
 
+        # 將 JSON 字串解析為 Python 字典
+        data = json.loads(payload)
+
+        # 訪問數據
+        x_acc = data['data']['x_acc']
+        max_x_acc = data['data']['max_x_acc']
+        y_acc = data['data']['y_acc']
+        max_y_acc = data['data']['max_y_acc']
+        z_acc = data['data']['z_acc']
+        max_z_acc = data['data']['max_z_acc']
+
+        # 輸出結果
+        print(f"x_acc: {x_acc}, max_x_acc: {max_x_acc}")
+        print(f"y_acc: {y_acc}, max_y_acc: {max_y_acc}")
+        print(f"z_acc: {z_acc}, max_z_acc: {max_z_acc}")
+
+
 
         topic_request =f"response/{macaddress}/service1";   # 订阅的主题
-        payload=f"{macaddress}|{crr_id}|Message"
+        payload=f"{macaddress}|{crr_id}|{payload}"
         client.publish(topic_request, payload=payload)
 
 
