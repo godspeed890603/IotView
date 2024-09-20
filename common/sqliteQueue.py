@@ -5,7 +5,7 @@ from datetime import datetime
 
 #新增 comsqlitetbl 進入import路徑(path)
 comsqlitetbl_config_path = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', 'com\comsqlitetbl'))
+    os.path.join(os.path.dirname(__file__), '..', 'com\\comsqlitetbl'))
 sys.path.append(comsqlitetbl_config_path)
 import comdbcon
 

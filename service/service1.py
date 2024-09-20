@@ -11,7 +11,9 @@ import loging
 
 
 def main():
-    # payload = sys.argv[1]
+    uuid = sys.argv[1]
+    loging.log_message("")
+    print(f"recieve uuid:{uuid}")
     # print(f"Service 1 is processing payload: {payload}")
     sqlite_queue_config_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..', 'queue'))
@@ -21,7 +23,7 @@ def main():
 
     # 取得不包含副檔名的檔案名稱
     service_name = os.path.splitext(os.path.basename(service_path))[0]
-
+    loging.log_message(f"uuid={uuid}",prefix=service_name)
     #print("程式名稱（不含副檔名）:", service_name)
 
 
@@ -34,9 +36,10 @@ def main():
     # 連接到 SQLite 資料庫（如果不存在則創建）
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
+    strSql=f"SELECT T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id FROM queue where crr_id='{uuid}'"
 
     # 查詢資料
-    cursor.execute('SELECT T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id FROM queue')
+    cursor.execute(strSql)
 
     # 逐筆讀取資料
     for row in cursor.fetchall():
@@ -88,17 +91,17 @@ if __name__ == "__main__":
     # 檢查互斥體是否已存在
     if ctypes.windll.kernel32.GetLastError() == 183:
         print("程式已經在運行")
-        loging.log_message(f"程式已經在運行:{service_name}")
+        loging.log_message(f"程式已經在運行:{service_name}",prefix=service_name)
         sys.exit(1)
 
     try:
         print("程式開始運行")
-        loging.log_message(f"程式開始運行:{service_name}")
+        loging.log_message(f"程式開始運行:{service_name}",prefix=service_name)
         main()
         # 你的程式邏輯在這裡
     finally:
         ctypes.windll.kernel32.ReleaseMutex(mutex)
         ctypes.windll.kernel32.CloseHandle(mutex)
-        loging.log_message(f"程式結束:{service_name}")
+        loging.log_message(f"程式結束:{service_name}",prefix=service_name)
         print("程式結束")
  

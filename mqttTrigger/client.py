@@ -4,8 +4,8 @@ import psutil
 import time
 
 # MQTT Broker 設定
-# BROKER_ADDRESS = "localhost"
-BROKER_ADDRESS = "172.20.10.4"
+BROKER_ADDRESS = "localhost"
+# BROKER_ADDRESS = "172.20.10.4"
 PORT = 1883
 REQUEST_TOPIC = "request/+/service1"
 USERNAME = "eason"

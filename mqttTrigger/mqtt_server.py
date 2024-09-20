@@ -38,6 +38,7 @@ def on_message(client, userdata, message):
 
     if len(topic_parts) > 1:
         service_name = topic_parts[2]  # 提取服務名稱
+        uuid=topic_parts[1]  # 提取uuid
 
         # 判斷服務是否存在於 YAML 中
         if service_name in serviceYamlSetting.SERVICE_CONFIG['services']:
@@ -48,19 +49,20 @@ def on_message(client, userdata, message):
 
             # 根據 YAML 中的設置調用對應的程式
             executable = serviceYamlSetting.SERVICE_CONFIG['services'][service_name]['executable']
-            call_service(executable, payload)
+            # call_service(executable, payload)
+            call_service(executable, uuid)
         else:
             print(f"Unknown service: {service_name}")
             loging.log_message(f"not found service: {service_name}")
 
 # 呼叫指定的服務
-def call_service(executable, payload):
+def call_service(executable, uuid):
     """根據 YAML 中指定的可執行檔名呼叫對應的程式"""
     try:
         # 調用其他的 Python 程式，並傳遞 payload 作為參數
         exefullpath = (rf"{serviceYamlSetting.SERVICE_PATH}\{executable}")
         # subprocess.run(["python", executable, payload], check=True)
-        subprocess.run(["python", exefullpath, payload], check=True)
+        subprocess.run(["python", exefullpath, uuid], check=True)
         print(f"Service {executable} executed successfully")
         loging.log_message(f"execute successfully: {executable}")
     except subprocess.CalledProcessError as e:

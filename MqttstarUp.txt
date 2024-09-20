@@ -6,3 +6,19 @@ listener 1883
 
 
 ./mosquitto.exe -c mosquitto.conf -v
+
+C:\"Program Files"\mosquitto\
+
+
+  BROKER_ADDRESS: "localhost"
+
+  PORT: 1883
+  REQUEST_TOPIC: "request/+/+"
+  USERNAME: "eason"
+  PASSWORD: "qazwsx"
+  收到這一個MQTT的訊息將它顯示在table
+request_topic = f"request/{strUUID}/{service_name}"
+request_payload = f"{get_mac_address()}|{strUUID}|{payload}"
+
+request_topic填入topic欄位
+request_payload 分別填入mac address ,corelation id ,payload欄位
