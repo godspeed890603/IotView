@@ -10,10 +10,55 @@ sys.path.append(log_config_path)
 import loging
 
 
+import paho.mqtt.client as mqtt
+import uuid
+import psutil
+import time
+
+# MQTT Broker 設定
+BROKER_ADDRESS = "localhost"
+# BROKER_ADDRESS = "172.20.10.4"
+PORT = 1883
+REQUEST_TOPIC = "request/+/service1"
+USERNAME = "eason"
+PASSWORD = "qazwsx"
+
+
+# 當發佈成功的回調函數
+def on_publish(client, userdata, mid):
+    print(f"Message published with ID: {mid}")
+    # 當接收到消息時的回調函數
+def on_message(client, userdata, message):
+    # 解碼消息
+    payload = message.payload.decode()
+    print(f"Received message on {message.topic}: {payload}")
+# 當連接到 broker 時的回調函數
+def on_connect(client, userdata, flags, rc):
+    if rc == 0:
+        print("Connected to broker")
+        # 訂閱回應主題
+        #client.subscribe(f"response/{strUUID}")
+    else:
+        print(f"Failed to connect, return code {rc}")
+
+
+
+
+client = mqtt.Client()  # 使用指定的 Client ID
+client.username_pw_set(USERNAME, PASSWORD)
+client.on_connect = on_connect
+client.on_message = on_message
+client.on_publish = on_publish
+
+# 連接到 MQTT Broker
+client.connect(BROKER_ADDRESS, PORT, keepalive=60)
+
+
+
 def main():
-    uuid = sys.argv[1]
+    macAddress = sys.argv[1]
     loging.log_message("")
-    print(f"recieve uuid:{uuid}")
+    print(f"recieve macAddress:{macAddress}")
     # print(f"Service 1 is processing payload: {payload}")
     sqlite_queue_config_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..', 'queue'))
@@ -36,7 +81,7 @@ def main():
     # 連接到 SQLite 資料庫（如果不存在則創建）
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    strSql=f"SELECT T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id FROM queue where crr_id='{uuid}'"
+    strSql=f"SELECT T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id FROM queue where macaddress='{macAddress}'"
 
     # 查詢資料
     cursor.execute(strSql)
@@ -59,6 +104,13 @@ def main():
         print(f"action_flg: {action_flg}")
         print(f"act_crr_id: {act_crr_id}")
         print("-----------")
+
+
+
+        topic_request =f"response/{macaddress}/service1";   # 订阅的主题
+        payload=f"{macaddress}|{crr_id}|Message"
+        client.publish(topic_request, payload=payload)
+
 
         ##解譯payload!!insert to db2
 

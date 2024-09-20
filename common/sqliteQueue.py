@@ -29,6 +29,7 @@ def addDataToQueue(message,service):
     macadress,crr_id,payload,action_flg=getData(message)
     #真正add資料進入sqlite queue
     comque.addToQueue(macadress,crr_id,payload,action_flg,service)
+    return True
 
 #檢查 "|" 分隔線資料格式是否正確
 def checkDataFormat(message):

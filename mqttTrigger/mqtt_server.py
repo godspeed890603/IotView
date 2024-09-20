@@ -3,6 +3,7 @@ import subprocess
 import yaml
 import sys
 import os
+import time
 
 
 # 將 config 資料夾加入 Python 的搜尋路徑
@@ -38,19 +39,24 @@ def on_message(client, userdata, message):
 
     if len(topic_parts) > 1:
         service_name = topic_parts[2]  # 提取服務名稱
-        uuid=topic_parts[1]  # 提取uuid
+        macAddress=topic_parts[1]  # 提取uuid
+        if payload=="service1":
+            print("service1")
 
         # 判斷服務是否存在於 YAML 中
         if service_name in serviceYamlSetting.SERVICE_CONFIG['services']:
             # 檢查service queue 是否存在
             # put message to queue
-            queue.addDataToQueue(payload,service_name)
-            loging.log_message(f"addDataToQueue: {payload},{service_name}")
+            if queue.addDataToQueue(payload,service_name):
+                loging.log_message(f"addDataToQueue: {payload},{service_name}")
 
-            # 根據 YAML 中的設置調用對應的程式
-            executable = serviceYamlSetting.SERVICE_CONFIG['services'][service_name]['executable']
-            # call_service(executable, payload)
-            call_service(executable, uuid)
+                # 根據 YAML 中的設置調用對應的程式
+                executable = serviceYamlSetting.SERVICE_CONFIG['services'][service_name]['executable']
+                # call_service(executable, payload)
+                call_service(executable, macAddress)
+            else:
+                print(f"Unknown format: [{payload}], service abort: [{service_name}]")
+                loging.log_message(f"Unknown format: {payload}, service abort: {service_name}")
         else:
             print(f"Unknown service: {service_name}")
             loging.log_message(f"not found service: {service_name}")
@@ -92,11 +98,18 @@ def main():
     # 連接到 MQTT Broker
     loging.log_message(f"connect mqtt ......")
     client.connect(brokerYamlSetting.BROKER_ADDRESS, brokerYamlSetting.PORT, keepalive=60)
+    # 开始处理循环
+    client.loop_start()  # 非阻塞的循环，处理消息
+    time.sleep(1)  # 确保连接建立
 
-    # 開始處理網絡循環
-    client.loop_forever()
+    # 发送请求消息
+    # send_request(service_name, payload)
+
+    # 继续处理消息接收
+    client.loop_forever()  # 保持 MQTT 客户端运作
 
 
 if __name__ == "__main__":
+    print(f"broker server start......")
     loging.log_message(f"broker server start......")
     main()
