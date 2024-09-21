@@ -2,6 +2,7 @@ import os
 import sys
 import sqlite3
 from datetime import datetime
+import json
 
 #新增 comsqlitetbl 進入import路徑(path)
 comsqlitetbl_config_path = os.path.abspath(
@@ -21,9 +22,9 @@ sqlite_queue_config_path = os.path.abspath(
 
 #準備呼叫Queue的功能
 def addDataToQueue(message,service):
-    if checkDataFormat(message)!=True:
-        print("message format error")
-        return False
+    # if checkDataFormat(message)!=True:
+    #     print("message format error")
+    #     return False
     
     # 使用 "|" 分隔字串
     macadress,crr_id,payload,action_flg=getData(message)
@@ -42,10 +43,13 @@ def checkDataFormat(message):
 #取得payload內文資料
 def getData(message):
      # 使用 "|" 分隔字串
-    payload_parts=message.split('|')
-    macadress=payload_parts[0]
-    crr_id=payload_parts[1]
-    payload=payload_parts[2]
+    # payload_parts=message.split('|')
+    data = json.loads(message)
+
+     # 訪問數據
+    macadress=data["mac_address"]
+    crr_id=data["correlation_id"]
+    payload=message
     action_flg="N"
     return macadress,crr_id,payload,action_flg
 

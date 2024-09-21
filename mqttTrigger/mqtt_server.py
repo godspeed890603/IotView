@@ -23,43 +23,85 @@ sys.path.append(log_config_path)
 import loging
 
 
+def iotProcess(payload,macAddress,service_name):
+    # 判斷服務是否存在於 YAML 中
+    if service_name in serviceYamlSetting.SERVICE_CONFIG['services']:
+        # 檢查service queue 是否存在
+        # put message to queue
+        if queue.addDataToQueue(payload,service_name):
+            loging.log_message(f"addDataToQueue: {payload},{service_name}")
 
-
+            # 根據 YAML 中的設置調用對應的程式
+            executable = serviceYamlSetting.SERVICE_CONFIG["services"][service_name][
+                "executable"
+            ]
+            # call_service(executable, payload)
+            call_service(executable, macAddress)
+        else:
+            print(f"Unknown format: [{payload}], service abort: [{service_name}]")
+            loging.log_message(f"Unknown format: {payload}, service abort: {service_name}")
+    else:
+        print(f"Unknown service: {service_name}")
+        loging.log_message(f"not found service: {service_name}")
 
 
 # 當接收到消息時的回調函數
 def on_message(client, userdata, message):
-    # 解碼消息
-    payload = message.payload.decode()
-    loging.log_message(f"payload: {payload}")
-    #print(f"Received message on {message.topic}: {payload}")
+    try:
+        print("on_message")
+        # return
+        try:
+            # 解碼消息
+            payload = message.payload.decode('utf-8')
+            loging.log_message(f"payload: {payload}")
+            # print(f"Received message on {message.topic}: {payload}")
+        except AttributeError:
+            print("Error: message or topic is None")
+            return
+        except UnicodeDecodeError:
+            print("Error: Failed to decode payload")
+            return
+       
+        # return
+        # 根據 topic 或 payload 動態調用不同的服務
+        topic_parts = message.topic.split('/')
 
-    # 根據 topic 或 payload 動態調用不同的服務
-    topic_parts = message.topic.split('/')
-
-    if len(topic_parts) > 1:
-        service_name = topic_parts[2]  # 提取服務名稱
-        macAddress=topic_parts[1]  # 提取uuid
-        if payload=="service1":
-            print("service1")
-
-        # 判斷服務是否存在於 YAML 中
-        if service_name in serviceYamlSetting.SERVICE_CONFIG['services']:
-            # 檢查service queue 是否存在
-            # put message to queue
-            if queue.addDataToQueue(payload,service_name):
-                loging.log_message(f"addDataToQueue: {payload},{service_name}")
-
-                # 根據 YAML 中的設置調用對應的程式
-                executable = serviceYamlSetting.SERVICE_CONFIG['services'][service_name]['executable']
-                # call_service(executable, payload)
-                call_service(executable, macAddress)
+        if len(topic_parts) >= 4:
+            system_type=topic_parts[1]
+            macAddress=topic_parts[2]  # 提取macadress
+            service_name = topic_parts[3]  # 提取服務名稱
+            
+            # return
+            if system_type == "iot":
+                # iotProcess(client, userdata, message)
+                iotProcess(payload,macAddress,service_name)
+                return
+            elif system_type == "mes":
+                print("tbd.....")
+                return
             else:
-                print(f"Unknown format: [{payload}], service abort: [{service_name}]")
-                loging.log_message(f"Unknown format: {payload}, service abort: {service_name}")
-        else:
-            print(f"Unknown service: {service_name}")
-            loging.log_message(f"not found service: {service_name}")
+                print("trigger monitor no system type.....")
+                return 
+
+            # # 判斷服務是否存在於 YAML 中
+            # if service_name in serviceYamlSetting.SERVICE_CONFIG['services']:
+            #     # 檢查service queue 是否存在
+            #     # put message to queue
+            #     if queue.addDataToQueue(payload,service_name):
+            #         loging.log_message(f"addDataToQueue: {payload},{service_name}")
+
+            #         # 根據 YAML 中的設置調用對應的程式
+            #         executable = serviceYamlSetting.SERVICE_CONFIG['services'][service_name]['executable']
+            #         # call_service(executable, payload)
+            #         call_service(executable, macAddress)
+            #     else:
+            #         print(f"Unknown format: [{payload}], service abort: [{service_name}]")
+            #         loging.log_message(f"Unknown format: {payload}, service abort: {service_name}")
+            # else:
+            #     print(f"Unknown service: {service_name}")
+            #     loging.log_message(f"not found service: {service_name}")
+    except Exception as e:
+        print(f"Error handling message: {e}")
 
 # 呼叫指定的服務
 def call_service(executable, uuid):
@@ -98,6 +140,7 @@ def main():
     # 連接到 MQTT Broker
     loging.log_message(f"connect mqtt ......")
     client.connect(brokerYamlSetting.BROKER_ADDRESS, brokerYamlSetting.PORT, keepalive=60)
+    # client.subscribe(brokerYamlSetting.REQUEST_TOPIC)  # 訂閱所有以 "request/+/service" 開頭的主題
     # 开始处理循环
     client.loop_start()  # 非阻塞的循环，处理消息
     time.sleep(1)  # 确保连接建立
