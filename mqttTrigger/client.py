@@ -25,7 +25,8 @@ def on_connect(client, userdata, flags, rc, properties=None):
     if rc == 0:
         print("Connected to broker")
         # 动态生成订阅主题
-        subscribe_topic = f"response//iot//{get_mac_address()}//{service_name}"
+        # subscribe_topic = f"response//iot//{get_mac_address()}//{service_name}"
+        subscribe_topic = "/".join(["response", "iot", get_mac_address(), service_name])
         
         client.subscribe(subscribe_topic)
         print(f"Subscribed to {subscribe_topic}")
@@ -46,7 +47,8 @@ def on_publish(client, userdata, mid):
 # 發送請求消息
 def send_request(service_name, payload):
     correlation_id = generate_correlation_id()
-    request_topic = f"request/iot/{get_mac_address()}/{service_name}"
+    request_topic = "/".join(["request", "iot", get_mac_address(), service_name])
+    # request_topic = f"request/iot/{get_mac_address()}/{service_name}"
     json_data = {
                 "data": {
                     "x_acc": 0.0,
