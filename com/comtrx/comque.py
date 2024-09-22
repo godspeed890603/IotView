@@ -7,8 +7,9 @@ import sqlite3
 from datetime import datetime
 import sys
 # 將 config 資料夾加入 Python 的搜尋路徑
+subpath = "\\".join(["..", "log"])
 log_config_path = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', '..\\log'))
+    os.path.join(os.path.dirname(__file__), '..', subpath))
 sys.path.append(log_config_path)
 import loging
 
@@ -25,9 +26,11 @@ sys.path.append(log_config_path)
 import loging
 
 
+
 #add queue path
+subpath = "\\".join(["..", "queue"])
 sqlite_queue_config_path = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', '..\\queue'))
+    os.path.join(os.path.dirname(__file__), '..', subpath))
 
 #提供外部呼叫
 def addToQueue(macadress,crr_id,payload,action_flg,service):
@@ -40,7 +43,10 @@ def addToQueue(macadress,crr_id,payload,action_flg,service):
 #連結Service Queue是否存在
 def ComQueopen(service):
     print("ComQueopen")
-    db_path = f'{sqlite_queue_config_path}\\{service}.db'
+    # db_path = f'{sqlite_queue_config_path}\\{service}.db'
+    # request_topic = "/".join(["request", "iot", get_mac_address(), service_name])
+    db_path = "\\".join([sqlite_queue_config_path, service])
+    db_path=".".join([db_path,"db"])                         
     conn = sqlite3.connect(db_path)
     return conn
 
@@ -70,7 +76,9 @@ def ComQueClose(conn):
 #檢查Service Queue是否存在
 def checkQueue(service):
     # 指定 SQLite 資料庫文件的路徑
-    db_path = rf'{sqlite_queue_config_path}\{service}.db'
+    db_path = "\\".join([sqlite_queue_config_path, service])
+    db_path=".".join([db_path,"db"])   
+    # db_path = rf'{sqlite_queue_config_path}\{service}.db'
 
     # 檢查資料庫是否已經存在
     db_exists = os.path.exists(db_path)

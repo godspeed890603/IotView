@@ -1,11 +1,21 @@
-from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget, QTableWidget, QTableWidgetItem, QSizePolicy
+from PyQt5.QtWidgets import (
+    QApplication,
+    QLabel,
+    QVBoxLayout,
+    QWidget,
+    QTableWidget,
+    QTableWidgetItem,
+    QSizePolicy,
+)
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt, pyqtSignal, QObject
 from PyQt5.QtWidgets import QHeaderView
 import paho.mqtt.client as mqtt
+import json
 
 table = None
 label = None
+
 
 class MQTTHandler(QObject):
     new_message = pyqtSignal(str, str, str, str)
@@ -16,19 +26,29 @@ class MQTTHandler(QObject):
         self.client.username_pw_set("eason", "qazwsx")
         self.client.on_message = self.on_message
         self.client.connect("localhost", 1883)
-        self.client.subscribe("request/+/+")
-        self.client.subscribe("response/+/+")
+        self.client.subscribe("request/iot/+/+")
+        self.client.subscribe("response/iot/+/+")
         self.client.loop_start()
 
     def on_message(self, client, userdata, message):
         topic = message.topic
         payload = message.payload.decode()
 
+        data = json.loads(payload)
+
+        # 訪問數據
+        mac_address = data["mac_address"]
+        correlation_id = data["correlation_id"]
+        payload_data = payload
+        # payload=message
+        # action_flg="N"
+
         # 分割 payload
-        mac_address, correlation_id, payload_data = payload.split('|')
+        # mac_address, correlation_id, payload_data = payload.split("|")
 
         # 使用信号传递数据到主线程
         self.new_message.emit(topic, mac_address, correlation_id, payload_data)
+
 
 def on_new_message(topic, mac_address, correlation_id, payload_data):
     # 检查表格行数是否超过 1000，如果是，删除第一行
@@ -48,6 +68,7 @@ def on_new_message(topic, mac_address, correlation_id, payload_data):
 
     # 删除重复的 Correlation ID 行
     remove_duplicate_correlation_ids()
+
 
 def remove_duplicate_correlation_ids():
     seen = {}  # 用来存储已经看到的 Correlation ID 及其行索引
@@ -70,8 +91,9 @@ def remove_duplicate_correlation_ids():
     for row in sorted(rows_to_remove, reverse=True):
         table.removeRow(row)
 
+
 def on_item_double_clicked(row, column):
-    """ 删除双击的行 """
+    """删除双击的行"""
     table.removeRow(row)
 
 
@@ -84,7 +106,7 @@ def main():
     window.resize(1024, 768)
     layout = QVBoxLayout()
 
-    label = QLabel('CIM IOT Mqtt Message Monitor')
+    label = QLabel("CIM IOT Mqtt Message Monitor")
     label.setAlignment(Qt.AlignCenter)  # 设置文本居中
     label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)  # 水平扩展标签
 
@@ -101,14 +123,18 @@ def main():
     table = QTableWidget()
     table.setRowCount(0)  # 初始化为 0 行
     table.setColumnCount(4)  # 设置列数
-    table.setHorizontalHeaderLabels(["Topic", "Mac Address", "Correlation ID", "Payload"])  # 设置列标题
+    table.setHorizontalHeaderLabels(
+        ["Topic", "Mac Address", "Correlation ID", "Payload"]
+    )  # 设置列标题
     header = table.horizontalHeader()
     header.setSectionResizeMode(QHeaderView.Stretch)
     table.setShowGrid(True)
     layout.addWidget(table)
 
     # 连接双击事件
-    table.itemDoubleClicked.connect(lambda item: on_item_double_clicked(item.row(), item.column()))
+    table.itemDoubleClicked.connect(
+        lambda item: on_item_double_clicked(item.row(), item.column())
+    )
 
     window.setLayout(layout)
     window.show()
@@ -120,6 +146,7 @@ def main():
     mqtt_handler.new_message.connect(on_new_message)
 
     app.exec_()
+
 
 if __name__ == "__main__":
     main()

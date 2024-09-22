@@ -5,14 +5,16 @@ from datetime import datetime
 import json
 
 #新增 comsqlitetbl 進入import路徑(path)
+subpath = "\\".join(["com", "comsqlitetbl"])
 comsqlitetbl_config_path = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', 'com\\comsqlitetbl'))
+    os.path.join(os.path.dirname(__file__), '..', subpath))
 sys.path.append(comsqlitetbl_config_path)
 import comdbcon
 
 #新增 comtrx 進入import路徑(path)
+subpath = "\\".join(["com", "comtrx"])
 comsqlitetbl_config_path = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', 'com\\comtrx'))
+    os.path.join(os.path.dirname(__file__), '..', subpath))
 sys.path.append(comsqlitetbl_config_path)
 import comque
 
@@ -32,13 +34,13 @@ def addDataToQueue(message,service):
     comque.addToQueue(macadress,crr_id,payload,action_flg,service)
     return True
 
-#檢查 "|" 分隔線資料格式是否正確
-def checkDataFormat(message):
-    #check "|" 分隔的資料是否=3
-    pipe_count = message.count('|')
-    if pipe_count !=2 :
-        return False
-    return True
+# #檢查 "|" 分隔線資料格式是否正確
+# def checkDataFormat(message):
+#     #check "|" 分隔的資料是否=3
+#     pipe_count = message.count('|')
+#     if pipe_count !=2 :
+#         return False
+#     return True
 
 #取得payload內文資料
 def getData(message):
