@@ -101,13 +101,13 @@ def main():
         act_crr_id = row[5]
         
         # 印出每個變數的值
-        print(f"T_stamp: {T_stamp}")
-        print(f"macaddress: {macaddress}")
-        print(f"crr_id: {crr_id}")
-        print(f"payload: {payload}")
-        print(f"action_flg: {action_flg}")
-        print(f"act_crr_id: {act_crr_id}")
-        print("-----------")
+        # print(f"T_stamp: {T_stamp}")
+        # print(f"macaddress: {macaddress}")
+        # print(f"crr_id: {crr_id}")
+        # print(f"payload: {payload}")
+        # print(f"action_flg: {action_flg}")
+        # print(f"act_crr_id: {act_crr_id}")
+        # print("-----------")
 
 
     # 解析 JSON 字符串为 Python 字典
@@ -123,15 +123,15 @@ def main():
         z_acc = data['data']['z_acc']
         max_z_acc = data['data']['max_z_acc']
 
-        # 输出所有值
-        print(f"MAC Address: {mac_address}")
-        print(f"Correlation ID: {correlation_id}")
-        print(f"x_acc: {x_acc}")
-        print(f"max_x_acc: {max_x_acc}")
-        print(f"y_acc: {y_acc}")
-        print(f"max_y_acc: {max_y_acc}")
-        print(f"z_acc: {z_acc}")
-        print(f"max_z_acc: {max_z_acc}")
+        # # 输出所有值
+        # print(f"MAC Address: {mac_address}")
+        # print(f"Correlation ID: {correlation_id}")
+        # print(f"x_acc: {x_acc}")
+        # print(f"max_x_acc: {max_x_acc}")
+        # print(f"y_acc: {y_acc}")
+        # print(f"max_y_acc: {max_y_acc}")
+        # print(f"z_acc: {z_acc}")
+        # print(f"max_z_acc: {max_z_acc}")
 
 
 
