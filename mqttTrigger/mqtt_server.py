@@ -46,6 +46,7 @@ def on_message(client, userdata, message):
                 print("Unknown system type")
     except Exception as e:
         loging.log_message(f"Error handling message: {e}")
+        print(f"Error handling message: {e}")
 
 
 def call_service(executable, macAddress):
@@ -56,6 +57,7 @@ def call_service(executable, macAddress):
         print(f"Service {executable} executed successfully")
     except subprocess.CalledProcessError as e:
         loging.log_message(f"Service {executable} failed: {e}")
+        print(f"Service {executable} failed: {e}")
 
 
 def on_connect(client, userdata, flags, reason_code, properties):
@@ -65,13 +67,15 @@ def on_connect(client, userdata, flags, reason_code, properties):
         time.sleep(0.5)
     else:
         loging.log_message(f"Failed to connect, return code {reason_code}")
+        print(f"Failed to connect, return code {reason_code}")
 
 
 # 當斷線時的回調函數
-def on_disconnect(client, userdata, rc):
-    if rc != 0:
-        print(f"Unexpected disconnection. Code: {rc}")
-        loging.log_message(f"Unexpected disconnection. Code: {rc}")
+# def on_disconnect(client, userdata, rc):
+def on_disconnect(client, userdata, flags, reason_code, properties):
+    if reason_code != 0:
+        print(f"Unexpected disconnection. Code: {reason_code}")
+        loging.log_message(f"Unexpected disconnection. Code: {reason_code}")
         try:
             client.reconnect()  # 嘗試重新連接
         except Exception as e:

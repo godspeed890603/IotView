@@ -8,10 +8,12 @@ from PyQt5.QtWidgets import (
     QSizePolicy,
 )
 from PyQt5.QtGui import QFont
-from PyQt5.QtCore import Qt, pyqtSignal, QObject
+from PyQt5.QtCore import Qt, pyqtSignal, QObject, QThread, pyqtSlot
 from PyQt5.QtWidgets import QHeaderView
 import paho.mqtt.client as mqtt
 import json
+import threading
+import time
 
 table = None
 label = None
@@ -40,20 +42,53 @@ class MQTTHandler(QObject):
         mac_address = data["mac_address"]
         correlation_id = data["correlation_id"]
         payload_data = payload
-        # payload=message
-        # action_flg="N"
-
-        # 分割 payload
-        # mac_address, correlation_id, payload_data = payload.split("|")
 
         # 使用信号传递数据到主线程
         self.new_message.emit(topic, mac_address, correlation_id, payload_data)
 
 
+class DuplicateCheckerThread(QThread):
+    def __init__(self):
+        super().__init__()
+        self.running = True
+
+    def run(self):
+        while self.running:
+            self.remove_duplicate_correlation_ids()
+            #time.sleep(1)  # 每隔5秒检查一次
+
+    def remove_duplicate_correlation_ids(self):
+        if table is None:
+            return
+
+        seen = {}  # 用来存储已经看到的 Correlation ID 及其行索引
+        rows_to_remove = []  # 存储要删除的行索引
+
+        # 遍历表格的每一行
+        for row in range(table.rowCount()):
+            correlation_id = table.item(row, 2).text()  # 获取第3列（Correlation ID）的值
+            if correlation_id in seen:
+                # 如果已经存在，则标记该行需要删除
+                rows_to_remove.append(row)
+                rows_to_remove.append(seen[correlation_id])  # 也标记之前的行
+            else:
+                seen[correlation_id] = row  # 记录该行的索引
+
+        # 使用集合去重，避免重复标记同一行
+        rows_to_remove = set(rows_to_remove)
+
+        # 倒序删除避免索引问题
+        for row in sorted(rows_to_remove, reverse=True):
+            table.removeRow(row)
+
+    def stop(self):
+        self.running = False
+
+
 def on_new_message(topic, mac_address, correlation_id, payload_data):
     # 检查表格行数是否超过 1000，如果是，删除第一行
-    # if table.rowCount() >= 1000:
-    #     table.removeRow(0)
+    if table.rowCount() >= 1000:
+        table.removeRow(0)
 
     # 添加新行
     row_position = table.rowCount()
@@ -65,31 +100,6 @@ def on_new_message(topic, mac_address, correlation_id, payload_data):
 
     # 设置当前焦点到新插入的行
     table.setCurrentCell(row_position, 0)
-
-    # 删除重复的 Correlation ID 行
-    remove_duplicate_correlation_ids()
-
-
-def remove_duplicate_correlation_ids():
-    seen = {}  # 用来存储已经看到的 Correlation ID 及其行索引
-    rows_to_remove = []  # 存储要删除的行索引
-
-    # 遍历表格的每一行
-    for row in range(table.rowCount()):
-        correlation_id = table.item(row, 2).text()  # 获取第3列（Correlation ID）的值
-        if correlation_id in seen:
-            # 如果已经存在，则标记该行需要删除
-            rows_to_remove.append(row)
-            rows_to_remove.append(seen[correlation_id])  # 也标记之前的行
-        else:
-            seen[correlation_id] = row  # 记录该行的索引
-
-    # 使用集合去重，避免重复标记同一行
-    rows_to_remove = set(rows_to_remove)
-
-    # 倒序删除避免索引问题
-    for row in sorted(rows_to_remove, reverse=True):
-        table.removeRow(row)
 
 
 def on_item_double_clicked(row, column):
@@ -145,7 +155,15 @@ def main():
     # 将信号连接到 on_new_message 函数
     mqtt_handler.new_message.connect(on_new_message)
 
+    # 创建并启动后台线程，处理重复行删除
+    duplicate_checker_thread = DuplicateCheckerThread()
+    duplicate_checker_thread.start()
+
+    # 启动应用程序
     app.exec_()
+
+    # 停止后台线程
+    duplicate_checker_thread.stop()
 
 
 if __name__ == "__main__":

@@ -1,3 +1,4 @@
+
 import paho.mqtt.client as mqtt
 import subprocess
 import sys
@@ -9,23 +10,24 @@ sys.path.extend([
     os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "common")),
     os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "log"))
 ])
-
-import brokerYaml as brokerYamlSetting  # 匯入 broker 設定
-import serviceYaml as serviceYamlSetting  # 匯入服務設定
-import sqliteQueue as queue  # 匯入資料庫佇列處理模組
 import loging  # 匯入記錄模組
-
+import sqliteQueue as queue  # 匯入資料庫佇列處理模組
+import serviceYaml as serviceYamlSetting  # 匯入服務設定
+import brokerYaml as brokerYamlSetting  # 匯入 broker 設定
 
 class MQTTClient:
     """
     MQTTClient 類別負責處理 MQTT 的連線、訂閱、斷線、自動重連以及消息處理。
     """
+
     def __init__(self):
         """
         初始化 MQTT 客戶端並設置連接、斷線、消息回調函數。
         """
-        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)  # 建立 MQTT 客戶端實例
-        self.client.username_pw_set(brokerYamlSetting.USERNAME, brokerYamlSetting.PASSWORD)  # 設置用戶名與密碼
+        self.client = mqtt.Client(
+            mqtt.CallbackAPIVersion.VERSION2)  # 建立 MQTT 客戶端實例
+        self.client.username_pw_set(
+            brokerYamlSetting.USERNAME, brokerYamlSetting.PASSWORD)  # 設置用戶名與密碼
         self.client.on_connect = self.on_connect  # 設置連線回調函數
         self.client.on_message = self.on_message  # 設置消息回調函數
         self.client.on_disconnect = self.on_disconnect  # 設置斷線回調函數
@@ -37,11 +39,15 @@ class MQTTClient:
         if reason_code == 0:
             loging.log_message("Connected to broker")  # 記錄連線成功的訊息
             client.subscribe(brokerYamlSetting.REQUEST_TOPIC)  # 訂閱預設的主題
+            print(f"Connected to broker")
             time.sleep(0.5)  # 等待 0.5 秒確保訂閱完成
         else:
-            loging.log_message(f"Failed to connect, return code {reason_code}")  # 記錄連線失敗的原因
+            loging.log_message(
+                f"Failed to connect, return code {reason_code}")  # 記錄連線失敗的原因
+            print(f"Failed to connect, return code {reason_code}")
 
-    def on_disconnect(self, client, userdata, rc):
+    # def on_disconnect(self, client, userdata, rc):
+    def on_disconnect(client, userdata, rc, properties=None):
         """
         當客戶端斷線時的回調函數，並嘗試自動重連。
         """
@@ -127,7 +133,7 @@ class MQTTClient:
                     print(f"Reconnect failed: {reconnection_error}")
                     loging.log_message(f"Reconnect failed: {reconnection_error}")  # 記錄重連失敗
                     
-                time.sleep(5)  # 等待 5 秒後重試，避免頻繁重連
+                time.sleep(1)  # 等待 5 秒後重試，避免頻繁重連
 
     def start(self):
         """
