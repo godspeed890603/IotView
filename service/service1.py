@@ -116,12 +116,12 @@ def main():
         # 提取所有值
         mac_address = data['mac_address']
         correlation_id = data['correlation_id']
-        x_acc = data['data']['data']['x_acc']
-        max_x_acc = data['data']['data']['max_x_acc']
-        y_acc = data['data']['data']['y_acc']
-        max_y_acc = data['data']['data']['max_y_acc']
-        z_acc = data['data']['data']['z_acc']
-        max_z_acc = data['data']['data']['max_z_acc']
+        x_acc = data['data']['x_acc']
+        max_x_acc = data['data']['max_x_acc']
+        y_acc = data['data']['y_acc']
+        max_y_acc = data['data']['max_y_acc']
+        z_acc = data['data']['z_acc']
+        max_z_acc = data['data']['max_z_acc']
 
         # 输出所有值
         print(f"MAC Address: {mac_address}")

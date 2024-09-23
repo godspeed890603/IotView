@@ -1,6 +1,7 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 #include "UUID.h"
+#include <ArduinoJson.h>
 
 // WiFi 配置
 const char* ssid = "Ktweety";
@@ -15,11 +16,13 @@ const char* mqtt_password = "qazwsx";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-// 使用 String 来动态调整主题
+// 使用 String ????整主?
 String topic_subscribe;
 String topic_publish;
 
-// 连接WiFi
+String macAddress;
+
+// ?接WiFi
 void setup_wifi() {
   delay(10);
   Serial.println();
@@ -39,7 +42,7 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
-// 处理接收到的MQTT消息
+// ?理接收到的MQTT消息
 void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message arrived [");
   Serial.print(topic);
@@ -50,14 +53,15 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.println();
 }
 
-// 重新连接MQTT
+// 重新?接MQTT
 void reconnect() {
+  //esp32.reset();
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // if (client.connect("ESP32Client1", mqtt_user, mqtt_password)) {
     if (client.connect( WiFi.macAddress().c_str(), mqtt_user, mqtt_password)) {
       Serial.println("connected");
-      client.subscribe(topic_subscribe.c_str());  // 动态订阅主题
+      client.subscribe(topic_subscribe.c_str());  // ????主?
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -73,11 +77,11 @@ void setup() {
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback);
 
-  // 动态拼接主题，使用 WiFi 的 MAC 地址
-  String macAddress = WiFi.macAddress();  // 获取MAC地址
-  // macAddress.replace(":", "");  // 移除冒号
+  // ??拼接主?，使用 WiFi 的 MAC 地址
+  macAddress = WiFi.macAddress();  // ?取MAC地址
+  // macAddress.replace(":", "");  // 移除冒?
 
-  // 动态调整订阅和发布主题
+  // ???整??和?布主?
   topic_subscribe = "response/iot/" + macAddress + "/service1";
   topic_publish = "request/iot/" + macAddress + "/service1";
 
@@ -91,11 +95,11 @@ void loop() {
   String strmsg;
   UUID uuid;
   if (!client.connected()) {
-    reconnect();  // 如果断线，尝试重新连接
+    reconnect();  // 如果??，??重新?接
   }
   client.loop();
 
-  // 发布消息
+  // ?布消息
   static unsigned long lastMsg = 0;
   unsigned long now = millis();
   uint32_t seed1 = random(999999999);
@@ -108,9 +112,29 @@ void loop() {
   if (now - lastMsg > 1000) {
     lastMsg = now;
     String msg = "Dynamic MQTT message content ";// + uuid.toCharArray();
+    // 創建一個靜態的 JSON document（大小根據你要的數據結構調整）
+  StaticJsonDocument<256> json_doc;
+
+  // 填充 JSON 數據
+  json_doc["mac_address"] = WiFi.macAddress();
+  json_doc["correlation_id"] = uuid.toCharArray();
+
+  // 對象內的數據
+  JsonObject data = json_doc.createNestedObject("data");
+  data["x_acc"] = 0.0;
+  data["max_x_acc"] = 0.0;
+  data["y_acc"] = 0.0;
+  data["max_y_acc"] = 0.0;
+  data["z_acc"] = 0.0;
+  data["max_z_acc"] = 0.0;
+
+  // 將 JSON 轉為字串，準備發送或顯示
+  String output;
+  serializeJson(json_doc, output);
+  Serial.println(output);
     Serial.print("Publishing message: ");
     Serial.println(msg);
-    client.publish(topic_publish.c_str(), strmsg.c_str());  // 动态发布主题
+    client.publish(topic_publish.c_str(), output.c_str());  // ???布主?
     Serial.println(" ");
   }
 }
