@@ -52,8 +52,8 @@ class MQTTHandler(QObject):
 
 def on_new_message(topic, mac_address, correlation_id, payload_data):
     # 检查表格行数是否超过 1000，如果是，删除第一行
-    # if table.rowCount() >= 1000:
-    #     table.removeRow(0)
+    if table.rowCount() >= 1000:
+        table.removeRow(0)
 
     # 添加新行
     row_position = table.rowCount()
