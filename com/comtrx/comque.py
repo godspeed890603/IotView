@@ -42,7 +42,7 @@ def addToQueue(macadress,crr_id,payload,action_flg,service):
 
 #連結Service Queue是否存在
 def ComQueopen(service):
-    print("ComQueopen")
+    # print("ComQueopen")
     # db_path = f'{sqlite_queue_config_path}\\{service}.db'
     # request_topic = "/".join(["request", "iot", get_mac_address(), service_name])
     db_path = "\\".join([sqlite_queue_config_path, service])
@@ -54,7 +54,7 @@ def ComQueopen(service):
 
 #新增資料進入Service Queue是否存在
 def ComQueAdd(conn,macadress,crr_id,payload,action_flg):
-    print("ComQueAdd")
+    # print("ComQueAdd")
     cursor = conn.cursor()
      # 進行其他資料庫操作
 
@@ -68,7 +68,7 @@ def ComQueAdd(conn,macadress,crr_id,payload,action_flg):
 
 #關閉Service Queue是否存在
 def ComQueClose(conn):
-    print("ComQueClose")
+    # print("ComQueClose")
     # 關閉連接
     conn.close()
 
@@ -115,8 +115,8 @@ def checkQueue(service):
 
     
         conn.commit()
-    else:
-        print(f"資料庫 {service}.db 已存在，直接使用")
+    # else:
+    #     print(f"資料庫 {service}.db 已存在，直接使用")
 
     # # 進行其他資料庫操作
     # cursor.execute('''INSERT INTO queue 

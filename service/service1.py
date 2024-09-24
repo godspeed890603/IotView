@@ -101,37 +101,15 @@ def main():
         act_crr_id = row[5]
         
         # 印出每個變數的值
-        print(f"T_stamp: {T_stamp}")
-        print(f"macaddress: {macaddress}")
-        print(f"crr_id: {crr_id}")
-        print(f"payload: {payload}")
-        print(f"action_flg: {action_flg}")
-        print(f"act_crr_id: {act_crr_id}")
-        print("-----------")
+        # print(f"T_stamp: {T_stamp}")
+        # print(f"macaddress: {macaddress}")
+        # print(f"crr_id: {crr_id}")
+        # print(f"payload: {payload}")
+        # print(f"action_flg: {action_flg}")
+        # print(f"act_crr_id: {act_crr_id}")
+        # print("-----------")
 
-    #   # 反转义字符串，使其成为有效的 JSON 字符串
-    #     unescaped_payload = payload.encode('utf-8').decode('unicode_escape')
-        
-    #     print(f"Unescaped Payload: {unescaped_payload}")
-        
-    #     # 去除引号包裹，如果有的话
-    #     if unescaped_payload.startswith('"') and unescaped_payload.endswith('"'):
-    #         unescaped_payload = unescaped_payload[1:-1]
-        
-    #     # 将反转义后的字符串解析为 Python 字典
-    #     data1 = json.loads(unescaped_payload)
-    #     # 訪問數據
-    #     x_acc = data['data']['x_acc']
-    #     max_x_acc = data['data']['max_x_acc']
-    #     y_acc = data['data']['y_acc']
-    #     max_y_acc = data['data']['max_y_acc']
-    #     z_acc = data['data']['z_acc']
-    #     max_z_acc = data['data']['max_z_acc']
 
-    #     # 輸出結果
-    #     print(f"x_acc: {x_acc}, max_x_acc: {max_x_acc}")
-    #     print(f"y_acc: {y_acc}, max_y_acc: {max_y_acc}")
-    #     print(f"z_acc: {z_acc}, max_z_acc: {max_z_acc}")
     # 解析 JSON 字符串为 Python 字典
         data = json.loads(payload)
 
@@ -145,15 +123,15 @@ def main():
         z_acc = data['data']['z_acc']
         max_z_acc = data['data']['max_z_acc']
 
-        # 输出所有值
-        print(f"MAC Address: {mac_address}")
-        print(f"Correlation ID: {correlation_id}")
-        print(f"x_acc: {x_acc}")
-        print(f"max_x_acc: {max_x_acc}")
-        print(f"y_acc: {y_acc}")
-        print(f"max_y_acc: {max_y_acc}")
-        print(f"z_acc: {z_acc}")
-        print(f"max_z_acc: {max_z_acc}")
+        # # 输出所有值
+        # print(f"MAC Address: {mac_address}")
+        # print(f"Correlation ID: {correlation_id}")
+        # print(f"x_acc: {x_acc}")
+        # print(f"max_x_acc: {max_x_acc}")
+        # print(f"y_acc: {y_acc}")
+        # print(f"max_y_acc: {max_y_acc}")
+        # print(f"z_acc: {z_acc}")
+        # print(f"max_z_acc: {max_z_acc}")
 
 
 
