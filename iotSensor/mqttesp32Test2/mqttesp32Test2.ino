@@ -4,11 +4,16 @@
 #include <ArduinoJson.h>
 
 // WiFi 配置
-const char* ssid = "Ktweety";
-const char* password = "28782878ab";
+// const char* ssid = "Ktweety";
+// const char* password = "28782878ab";
+
+// WiFi 配置
+const char* ssid = "CIM_WIFI";
+const char* password = "hsd@5052880";
+
 
 // MQTT 配置
-const char* mqtt_server = "172.20.10.4";
+const char* mqtt_server ="172.27.17.4";
 const int mqtt_port = 1883;
 const char* mqtt_user = "eason";
 const char* mqtt_password = "qazwsx";
@@ -68,9 +73,12 @@ void reconnect() {
       Serial.print("failed, rc=");
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
-      delay(5000);
+      delay(3000);
     }
-    if (i>10)  ESP.restart(); 
+    if (i>5) {
+      Serial.println("  ESP.restart(); ");
+      ESP.restart(); 
+    } 
   }
 }
 
