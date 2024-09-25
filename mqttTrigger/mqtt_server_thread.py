@@ -4,6 +4,7 @@ import sys
 import os
 import time
 import concurrent.futures
+from PyQt5.QtWidgets import QApplication, QMessageBox
 
 # 將 config 資料夾加入 Python 的搜尋路徑
 sys.path.extend([
@@ -17,11 +18,25 @@ import brokerYaml as brokerYamlSetting  # 匯入 broker 設定
 
 class MQTTClient:
     def __init__(self):
-        self.client = mqtt.Client()
-        self.client.username_pw_set(brokerYamlSetting.USERNAME, brokerYamlSetting.PASSWORD)
-        self.client.on_connect = self.on_connect
-        self.client.on_message = self.on_message
-        self.client.on_disconnect = self.on_disconnect
+        try:
+            """
+            啟動 MQTT 客戶端，並開始讀取設定。
+            """
+            loging.log_message("開始讀取設定")  # 記錄伺服器啟動
+            self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+            self.client.username_pw_set(brokerYamlSetting.USERNAME, brokerYamlSetting.PASSWORD)
+            self.client.on_connect = self.on_connect
+            self.client.on_message = self.on_message
+            self.client.on_disconnect = self.on_disconnect
+        except Exception as e:
+            # 當發生連接異常時，彈出錯誤提示框
+            loging.log_message(f"開始讀取設定Failed: {str(e)}，請確認設定檔yaml正確")# 記錄伺服器啟動
+            self.show_error_message(f"開始讀取設定Failed: {str(e)}，請確認設定檔yaml正確")
+
+
+
+
+        
 
     def on_connect(self, client, userdata, flags, reason_code, properties=None):
 
@@ -117,14 +132,36 @@ class MQTTClient:
                 except Exception as reconnection_error:
                     print(f"Reconnect failed: {reconnection_error}")
                     loging.log_message(f"Reconnect failed: {reconnection_error}")  # 記錄重連失敗
+    def show_error_message(self, message):
+        """
+        顯示錯誤提示框並結束程式。
+        """
+        app = QApplication(sys.argv)  # 如果應用程序未運行，初始化它
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Critical)
+        msg_box.setWindowTitle("系統開機 Connection Error")
+        msg_box.setText(message)
+        msg_box.setStandardButtons(QMessageBox.Ok)
+
+        # 當使用者點擊“確定”時，結束程式
+        if msg_box.exec_() == QMessageBox.Ok:
+            sys.exit()                
 
     def start(self):
         """
         啟動 MQTT 客戶端，並開始消息處理循環。
         """
-        loging.log_message("Broker server started")  # 記錄伺服器啟動
-        self.client.connect(brokerYamlSetting.BROKER_ADDRESS, brokerYamlSetting.PORT, keepalive=60)  # 連接 MQTT broker
-        self.loop_forever()  # 開始持續運行
+        try:
+            """
+            啟動 MQTT 客戶端，並開始消息處理循環。
+            """
+            loging.log_message("Broker server started")  # 記錄伺服器啟動
+            self.client.connect(brokerYamlSetting.BROKER_ADDRESS, brokerYamlSetting.PORT, keepalive=60)  # 連接 MQTT broker
+            self.loop_forever()  # 開始持續運行
+        except Exception as e:
+            # 當發生連接異常時，彈出錯誤提示框
+            loging.log_message(f"系統啟動Failed to connect to MQTT broker: {str(e)}，請確認在PowerShell啟動Mqtt")# 記錄伺服器啟動
+            self.show_error_message(f"系統啟動Failed to connect to MQTT broker: {str(e)}，請確認在PowerShell啟動Mqtt")
 
 
 if __name__ == "__main__":

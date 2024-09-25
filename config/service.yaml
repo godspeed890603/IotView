@@ -1,10 +1,14 @@
 services:
   service1:
     executable: "service1.py"
-  service2:
-    executable: "service2.py"
-  service3:
-    executable: "service3.py"
+  vibration:
+    executable: "service_vibration.py"
+  voltage:
+    executable: "service_voltage.py"
+  pms:
+    executable: "service_pms.py"
+  tempHumi:
+    executable: "service_tempHumi.py"  
 
 mqtt_config:
   BROKER_ADDRESS: "172.27.51.73"
