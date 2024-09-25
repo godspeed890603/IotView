@@ -1,0 +1,42 @@
+#include <WiFi.h>
+#include "MQTTClient.h"  // 引入自定義的 MQTTClient 類別
+
+// WiFi 設定
+// WiFi 配置
+const char* ssid = "Ktweety";
+const char* password = "28782878ab";
+
+// 創建 MQTTClient 物件
+MQTTClient mqttClientHandler;
+
+// 連接到 WiFi 函數
+void setupWiFi() {
+  delay(10);
+  Serial.println("Connecting to WiFi...");
+  WiFi.begin(ssid, password);
+  
+  // 等待 WiFi 連接成功
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+
+// 初始化
+void setup() {
+  Serial.begin(115200);  // 初始化序列埠進行日誌輸出
+  setupWiFi();           // 連接到 WiFi
+  mqttClientHandler.connect();  // 連接到 MQTT broker
+}
+
+// 主循環函數
+void loop() {
+  mqttClientHandler.loop();  // 處理 MQTT 客戶端事件 (包括重連)
+  
+  // 發布測試資料到 MQTT broker
+  String data = "{ \"temperature\": 25.4, \"humidity\": 65.3 }";
+  mqttClientHandler.publishData(data);
+
+  delay(5000);  // 每 5 秒發佈一次資料
+}

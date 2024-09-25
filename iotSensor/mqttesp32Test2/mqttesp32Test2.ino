@@ -55,8 +55,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 // 重新?接MQTT
 void reconnect() {
+  int i=0;
   //esp32.reset();
   while (!client.connected()) {
+    i++;
     Serial.print("Attempting MQTT connection...");
     // if (client.connect("ESP32Client1", mqtt_user, mqtt_password)) {
     if (client.connect( WiFi.macAddress().c_str(), mqtt_user, mqtt_password)) {
@@ -68,6 +70,7 @@ void reconnect() {
       Serial.println(" try again in 5 seconds");
       delay(5000);
     }
+    if (i>10)  ESP.restart(); 
   }
 }
 
