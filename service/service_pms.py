@@ -59,7 +59,7 @@ client.connect(BROKER_ADDRESS, PORT, keepalive=60)
 
 def main():
     macAddress = sys.argv[1]
-    loging.log_message("")
+    # loging.log_message("")
     print(f"recieve macAddress:{macAddress}")
     # print(f"Service 1 is processing payload: {payload}")
     sqlite_queue_config_path = os.path.abspath(
@@ -70,7 +70,8 @@ def main():
 
     # 取得不包含副檔名的檔案名稱
     service_name = os.path.splitext(os.path.basename(service_path))[0]
-    loging.log_message(f"uuid={uuid}",prefix=service_name)
+    logprefix=service_name+"-"+sys.argv[1].replace(":","-")
+    loging.log_message(f"uuid={uuid}",prefix=logprefix)
     #print("程式名稱（不含副檔名）:", service_name)
 
 
@@ -170,21 +171,22 @@ if __name__ == "__main__":
     # 創建全局互斥體
     mutexname = "\\".join(["Global", "MyUniqueMutexName"])
     mutex = ctypes.windll.kernel32.CreateMutexW(None, False, "Global\\MyUniqueMutexName")
+    logprefix=service_name+"-"+sys.argv[1].replace(":","-")
 
     # 檢查互斥體是否已存在
     if ctypes.windll.kernel32.GetLastError() == 183:
         print("程式已經在運行")
-        loging.log_message(f"程式已經在運行:{service_name}",prefix=service_name)
+        loging.log_message(f"程式已經在運行:{service_name}",prefix=logprefix)
         sys.exit(1)
 
     try:
         print("程式開始運行")
-        loging.log_message(f"程式開始運行:{service_name}",prefix=service_name)
+        loging.log_message(f"程式開始運行:{service_name}",prefix=logprefix)
         main()
         # 你的程式邏輯在這裡
     finally:
         ctypes.windll.kernel32.ReleaseMutex(mutex)
         ctypes.windll.kernel32.CloseHandle(mutex)
-        loging.log_message(f"程式結束:{service_name}",prefix=service_name)
+        loging.log_message(f"程式結束:{service_name}",prefix=logprefix)
         print("程式結束")
  
