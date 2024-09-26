@@ -4,10 +4,16 @@ request:send from client
 service1:service name for example:temp,humi,verbration,PMS
 
 REQUEST_TOPIC example:
-"request/macaddress+UUID/service_temp"
-"request/macaddress+UUID/service_humi"
-"request/macaddress+UUID/service_verbration"
-"request/macaddress+UUID/service_PMS"
+"request/iot/macaddress/service_temp"
+"request/iot/macaddress/service_temphumi"
+"request/iot/macaddress/service_verbration"
+"request/iot/macaddress/service_pms"
+
+"response/iot/macaddress/service_temp"
+"response/iot/macaddress/service_temphumi"
+"response/iot/macaddress/service_virbration"
+"response/iot/macaddress/service_pms"
+
 
 2.on_message
 -根據service name 產生sqlite queue_db
