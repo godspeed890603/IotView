@@ -5,7 +5,7 @@ import threading
 import json
 
 # MQTT Broker 設定
-BROKER_ADDRESS = "localhost"
+BROKER_ADDRESS = "172.27.17.4"
 PORT = 1883
 USERNAME = "eason"
 PASSWORD = "qazwsx"
