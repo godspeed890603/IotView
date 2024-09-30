@@ -42,7 +42,7 @@ class MQTTClient:
 
         if reason_code == 0:
             loging.log_message("Connected to broker")
-            client.subscribe(brokerYamlSetting.REQUEST_TOPIC)
+            client.subscribe(brokerYamlSetting.REQUEST_TOPIC,qos=2)
             print(f"Connected to broker")
             time.sleep(0.5)
         else:

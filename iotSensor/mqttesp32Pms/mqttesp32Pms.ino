@@ -25,6 +25,8 @@ PubSubClient client(espClient);
 // 使用 String ????整主?
 String topic_subscribe;
 String topic_publish;
+int qos_subscribe=1;
+int qos_publish=2;
 
 String macAddress;
 
@@ -69,7 +71,13 @@ void reconnect() {
     // if (client.connect("ESP32Client1", mqtt_user, mqtt_password)) {
     if (client.connect( WiFi.macAddress().c_str(), mqtt_user, mqtt_password)) {
       Serial.println("connected");
-      client.subscribe(topic_subscribe.c_str());  // ????主?
+      if (client.subscribe(topic_subscribe.c_str(), qos_subscribe)) { 
+        Serial.println("Subscribed successfully with QoS 2");
+        delay(10000);
+    } else {
+      Serial.println("Failed to subscribe with QoS 2");
+      delay(10000);
+    }
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -146,7 +154,7 @@ void loop() {
   Serial.println(output);
     Serial.print("Publishing message: ");
     Serial.println(msg);
-    client.publish(topic_publish.c_str(), output.c_str());  // ???布主?
+    client.publish(topic_publish.c_str(), output.c_str(),qos_publish);  // ???布主?
     Serial.println(" ");
   }
 }

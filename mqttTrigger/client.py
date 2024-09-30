@@ -5,7 +5,8 @@ import threading
 import json
 
 # MQTT Broker 設定
-BROKER_ADDRESS = "172.27.17.4"
+BROKER_ADDRESS = "localhost"
+# BROKER_ADDRESS = "172.27.17.4"
 PORT = 1883
 USERNAME = "eason"
 PASSWORD = "qazwsx"
@@ -33,7 +34,7 @@ def on_connect(client, userdata, flags, rc, properties=None):
         print("Connected to broker")
         subscribe_topic = "/".join(["response", "iot",
                                    get_mac_address(), service_name])
-        client.subscribe(subscribe_topic)
+        client.subscribe(subscribe_topic, qos=2)
         print(f"Subscribed to {subscribe_topic}")
     else:
         print(f"Failed to connect, return code {rc}")
@@ -60,21 +61,21 @@ def send_request(service_name, payload):
     correlation_id = generate_correlation_id()
     request_topic = "/".join(["request", "iot",
                              get_mac_address(), service_name])
-    json_data ={
-                    "x_acc": 0.0,
-                    "max_x_acc": 0.0,
-                    "y_acc": 0.0,
-                    "max_y_acc": 0.0,
-                    "z_acc": 0.0,
-                    "max_z_acc": 0.0
-                }
+    json_data = {
+        "x_acc": 0.0,
+        "max_x_acc": 0.0,
+        "y_acc": 0.0,
+        "max_y_acc": 0.0,
+        "z_acc": 0.0,
+        "max_z_acc": 0.0
+    }
     request_payload = {
         "mac_address": get_mac_address(),
         "correlation_id": correlation_id,
         "data": json_data,
     }
     payload = json.dumps(request_payload)
-    client.publish(request_topic, payload=payload, qos=1)
+    client.publish(request_topic, payload=payload, qos=2)
     print(f"Sent request to {request_topic} with payload: {payload}")
 
 # 定期發送請求消息

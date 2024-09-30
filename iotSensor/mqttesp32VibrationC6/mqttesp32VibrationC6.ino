@@ -19,6 +19,8 @@ const int mqtt_port = 1883;
 const char* mqtt_user = "eason";
 const char* mqtt_password = "qazwsx";
 
+int qos_subscribe=1;
+int qos_publish=2;
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -69,7 +71,7 @@ void reconnect() {
     // if (client.connect("ESP32Client1", mqtt_user, mqtt_password)) {
     if (client.connect( WiFi.macAddress().c_str(), mqtt_user, mqtt_password)) {
       Serial.println("connected");
-      client.subscribe(topic_subscribe.c_str());  // ????主?
+      client.subscribe(topic_subscribe.c_str()),qos_subscribe;  // ????主?
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -146,7 +148,7 @@ void loop() {
   Serial.println(output);
     Serial.print("Publishing message: ");
     Serial.println(msg);
-    client.publish(topic_publish.c_str(), output.c_str());  // ???布主?
+    client.publish(topic_publish.c_str(), output.c_str(),topic_publish);  // ???布主?
     Serial.println(" ");
   }
 }
