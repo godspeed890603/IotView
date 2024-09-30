@@ -175,7 +175,7 @@ if __name__ == "__main__":
     if ctypes.windll.kernel32.GetLastError() == 183:
         print("程式已經在運行")
         loging.log_message(f"程式已經在運行:{service_name}",prefix=service_name)
-        sys.exit(1)
+        sys.exit()
 
     try:
         print("程式開始運行")
