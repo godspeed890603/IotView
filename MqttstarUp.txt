@@ -22,3 +22,8 @@ request_payload = f"{get_mac_address()}|{strUUID}|{payload}"
 
 request_topic填入topic欄位
 request_payload 分別填入mac address ,corelation id ,payload欄位
+
+
+python mqtt_server_asyncio_param.py --request_topic REQUEST_TOPIC_PMS
+python mqtt_server_asyncio_param.py --request_topic REQUEST_TOPIC_SERVICE1
+python mqtt_server_asyncio_param.py --request_topic REQUEST_TOPIC_ALL

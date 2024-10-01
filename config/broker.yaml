@@ -2,6 +2,8 @@ mqtt_config:
   BROKER_ADDRESS: "localhost"
   # BROKER_ADDRESS: "172.20.10.4"
   PORT: 1883
-  REQUEST_TOPIC: "request/iot/+/+"
+  REQUEST_TOPIC_ALL: "request/iot/+/+"
+  REQUEST_TOPIC_PMS: "request/iot/+/service_pms"
+  REQUEST_TOPIC_SERVICE1: "request/iot/+/service1"
   USERNAME: "eason"
   PASSWORD: "qazwsx"

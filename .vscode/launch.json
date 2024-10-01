@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 執行帶參數的腳本",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--request_topic", "REQUEST_TOPIC_SERVICE1"
+            ]
+        }
+    ]
+}
