@@ -8,7 +8,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
-                "--request_topic", "REQUEST_TOPIC_SERVICE1"
+                "--subscribe_topic", "SUBSCRIBE_TOPIC_SERVICE1"
             ]
         }
     ]

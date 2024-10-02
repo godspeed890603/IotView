@@ -9,6 +9,8 @@ listener 1883
 
 C:\"Program Files"\mosquitto\
 
+cd C:\UserData\Vscode\python\IotView\mqttTrigger
+
 
   BROKER_ADDRESS: "localhost"
 
@@ -24,6 +26,6 @@ request_topic填入topic欄位
 request_payload 分別填入mac address ,corelation id ,payload欄位
 
 
-python mqtt_server_asyncio_param.py --request_topic REQUEST_TOPIC_PMS
-python mqtt_server_asyncio_param.py --request_topic REQUEST_TOPIC_SERVICE1
-python mqtt_server_asyncio_param.py --request_topic REQUEST_TOPIC_ALL
+python mqtt_server_asyncio_param.py --subscribe_topic SUBSCRIBE_TOPIC_PMS
+python mqtt_server_asyncio_param.py --subscribe SUBSCRIBE_TOPIC_SERVICE1
+python mqtt_server_asyncio_param.py --subscribe SUBSCRIBE_TOPIC_ALL

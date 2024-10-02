@@ -9,7 +9,7 @@ import argparse
 import yaml  # Import PyYAML to read YAML configuration
 from PyQt5.QtWidgets import QApplication, QMessageBox
 import threading
-
+import ctypes
 
 
 
@@ -29,6 +29,28 @@ yaml_file_path = os.path.join(os.path.join(
 with open(yaml_file_path, "r") as file:
     brokerYamlSetting = yaml.safe_load(file)
 
+def is_mutex_exists(service_name):
+    # 創建全局互斥體名稱
+    mutexname = "\\".join(["Global", service_name])
+    # print(f"is_mutex_exists name :{service_name}")
+    # 嘗試創建互斥體
+    mutex = ctypes.windll.kernel32.CreateMutexW(None, False, mutexname)
+    rtn=ctypes.windll.kernel32.GetLastError() 
+    # print(f'is_mutex_exists rtn:{rtn}')
+    # 檢查是否已存在互斥體
+    if rtn == 183:  # 183 表示互斥體已存在
+        # 只需關閉句柄，不需要釋放互斥體
+        ctypes.windll.kernel32.CloseHandle(mutex)
+        # print("Program RUN")
+        return True
+    else:
+        # 只需關閉句柄，不需要釋放互斥體
+        ctypes.windll.kernel32.CloseHandle(mutex)
+        # print("Program not RUN")
+        return False
+        
+
+
 class MQTTClient:
     def __init__(self, request_topic):
         try:
@@ -39,7 +61,7 @@ class MQTTClient:
             self.client.on_message = self.on_message
             self.client.on_disconnect = self.on_disconnect
 
-            self.request_topic = request_topic  # Set the request topic dynamically
+            self.subscribe_topic = subscribe_topic  # Set the request topic dynamically
 
             # Initialize asyncio event loop
             self.loop = asyncio.new_event_loop()
@@ -56,8 +78,8 @@ class MQTTClient:
     def on_connect(self, client, userdata, flags, reason_code, properties=None):
         if reason_code == 0:
             loging.log_message("Connected to broker")
-            client.subscribe(self.request_topic, qos=2)
-            print(f"Subscribed to: {self.request_topic}")
+            client.subscribe(self.subscribe_topic, qos=2)
+            print(f"Subscribed to: {self.subscribe_topic}")
             time.sleep(0.5)
         else:
             loging.log_message(f"Failed to connect, return code {reason_code}")
@@ -93,13 +115,16 @@ class MQTTClient:
         except Exception as e:
             loging.log_message(f"Error handling message: {e}")
 
+    
+
     async def iot_process(self, payload, macAddress, service_name):
         service_config = serviceYamlSetting.SERVICE_CONFIG["services"]
         
         if service_name in service_config:
             if queue.addDataToQueue(payload, service_name):
                 loging.log_message(f"addDataToQueue: {payload}, {service_name}")
-                await self.call_service(service_config[service_name]["executable"], macAddress)
+                if not (is_mutex_exists(service_name)):
+                    await self.call_service(service_config[service_name]["executable"], macAddress)
             else:
                 loging.log_message(f"Unknown format: {payload}, service abort: {service_name}")
         else:
@@ -109,11 +134,11 @@ class MQTTClient:
         try:
             exefullpath = os.path.join(serviceYamlSetting.SERVICE_PATH, executable)
             process = await asyncio.create_subprocess_exec(
-                "python", exefullpath, macAddress
+                "pythonw", exefullpath, macAddress
             )
             await process.communicate()
             loging.log_message(f"Service {executable} executed successfully")
-            print(f"Service {executable} executed successfully")
+            # print(f"Service {executable} executed successfully")
         except Exception as e:
             loging.log_message(f"Service {executable} failed: {e}")
 
@@ -152,21 +177,22 @@ class MQTTClient:
         except Exception as e:
             loging.log_message(f"Failed to connect to MQTT broker: {str(e)}")
             self.show_error_message(f"Failed to connect to MQTT broker: {str(e)}")
-
+    
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="MQTT Client")
-    parser.add_argument("--request_topic", type=str, default="REQUEST_TOPIC__PMS", 
-                        help="MQTT request topic key from broker.yaml")
+    parser.add_argument("--subscribe_topic", type=str, default="SUBCRIBE_TOPIC__PMS", 
+                        help="MQTT subscribe topic key from broker.yaml")
     
     args = parser.parse_args()
 
     # Retrieve the request topic from broker.yaml based on the argument
-    request_topic_key = args.request_topic
-    request_topic = brokerYamlSetting['mqtt_config'].get(request_topic_key)
+    subscribe_topic_key = args.subscribe_topic
+    subscribe_topic = brokerYamlSetting['mqtt_config'].get(subscribe_topic_key)
 
-    if request_topic:
-        mqtt_client = MQTTClient(request_topic)
+    if subscribe_topic:
+        mqtt_client = MQTTClient(subscribe_topic)
         mqtt_client.start()
     else:
-        print(f"Invalid request topic key: {request_topic_key}")
+        print(f"Invalid request topic key: {subscribe_topic_key}")

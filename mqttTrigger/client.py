@@ -115,7 +115,7 @@ client.loop_start()
 # 在背景線程中定期發送請求消息
 payload = "Request data for service"
 request_thread = threading.Thread(
-    target=send_request_periodically, args=(service_name, payload, 1))
+    target=send_request_periodically, args=(service_name, payload, 5))
 request_thread.daemon = True  # 設置為守護線程
 request_thread.start()
 
