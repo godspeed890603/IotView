@@ -61,19 +61,47 @@ def send_request(service_name, payload):
     correlation_id = generate_correlation_id()
     request_topic = "/".join(["request", "iot",
                              get_mac_address(), service_name])
-    json_data = {
-        "x_acc": 0.0,
-        "max_x_acc": 0.0,
-        "y_acc": 0.0,
-        "max_y_acc": 0.0,
-        "z_acc": 0.0,
-        "max_z_acc": 0.0
-    }
+    # json_data = {
+    #     "x_acc": 0.0,
+    #     "max_x_acc": 0.0,
+    #     "y_acc": 0.0,
+    #     "max_y_acc": 0.0,
+    #     "z_acc": 0.0,
+    #     "max_z_acc": 0.0
+    # }
+
     request_payload = {
-        "mac_address": get_mac_address(),
+         "mac_address": get_mac_address(),
         "correlation_id": correlation_id,
-        "data": json_data,
+        "data": {
+            "SENSOR_ID": "0C:8B:95:74:F5:B8",
+            "machine_ID": "AGV",
+            "ip": "172.27.17.22",
+            "rssi": -72,
+            "x_acc": 8.290728,
+            "y_acc": -9.02224,
+            "z_acc": 4.053939,
+            "max_x_acc": 8.300304,
+            "max_y_acc": -9.012662,
+            "max_z_acc": 4.077881,
+            "min_x_acc": 8.276362,
+            "min_y_acc": -9.043787,
+            "min_z_acc": 4.053939,
+            "x_z_ang": -53.64253,
+            "y_z_ang": -49.29472,
+            "max_x_z_ang": -53.5691,
+            "max_y_z_ang": -49.18776,
+            "min_x_z_ang": -53.69079,
+            "min_y_z_ang": -49.36634,
+            "temperature": 25.84176
+        }
     }
+
+    # request_payload = {
+    #     "mac_address": get_mac_address(),
+    #     "correlation_id": correlation_id,
+    #     "data": json_data,
+    # }
     payload = json.dumps(request_payload)
     client.publish(request_topic, payload=payload, qos=2)
     print(f"Sent request to {request_topic} with payload: {payload}")
@@ -115,7 +143,7 @@ client.loop_start()
 # 在背景線程中定期發送請求消息
 payload = "Request data for service"
 request_thread = threading.Thread(
-    target=send_request_periodically, args=(service_name, payload, 5))
+    target=send_request_periodically, args=(service_name, payload, 1))
 request_thread.daemon = True  # 設置為守護線程
 request_thread.start()
 

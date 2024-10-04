@@ -63,14 +63,105 @@ def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,
         # print(f"Thread started to process record: {t_stamp}, {macaddress}, {crr_id}")
         try:
             data = json.loads(payload)
-            mac_address = data['mac_address']
-            correlation_id = data['correlation_id']
-            x_acc = data['data']['x_acc']
-            max_x_acc = data['data']['max_x_acc']
-            y_acc = data['data']['y_acc']
-            max_y_acc = data['data']['max_y_acc']
-            z_acc = data['data']['z_acc']
-            max_z_acc = data['data']['max_z_acc']
+            # 提取感測器數據
+            sensor_data = data['data']
+            sensor_id = sensor_data['SENSOR_ID']
+            machine_id = sensor_data['machine_ID']
+            ip = sensor_data['ip']
+            rssi = sensor_data['rssi']
+            x_acc = sensor_data['x_acc']
+            y_acc = sensor_data['y_acc']
+            z_acc = sensor_data['z_acc']
+            max_x_acc = sensor_data['max_x_acc']
+            max_y_acc = sensor_data['max_y_acc']
+            max_z_acc = sensor_data['max_z_acc']
+            min_x_acc = sensor_data['min_x_acc']
+            min_y_acc = sensor_data['min_y_acc']
+            min_z_acc = sensor_data['min_z_acc']
+            x_z_ang = sensor_data['x_z_ang']
+            y_z_ang = sensor_data['y_z_ang']
+            max_x_z_ang = sensor_data['max_x_z_ang']
+            max_y_z_ang = sensor_data['max_y_z_ang']
+            min_x_z_ang = sensor_data['min_x_z_ang']
+            min_y_z_ang = sensor_data['min_y_z_ang']
+            temperature = sensor_data['temperature']
+
+            # 連接到資料庫
+            conn = ibm_db.connect("DATABASE=db_name;HOSTNAME=host_name;PORT=50000;PROTOCOL=TCPIP;UID=user;PWD=password;", "", "")
+
+            # 準備插入的 SQL 語句
+            sql = '''INSERT INTO sensor_data (
+                SENSOR_ID, machine_ID, ip, rssi, x_acc, y_acc, z_acc, 
+                max_x_acc, max_y_acc, max_z_acc, min_x_acc, min_y_acc, min_z_acc, 
+                x_z_ang, y_z_ang, max_x_z_ang, max_y_z_ang, min_x_z_ang, min_y_z_ang, temperature) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+            stmt = ibm_db.prepare(conn, sql)
+
+            # 綁定參數
+            ibm_db.bind_param(stmt, 1, sensor_id)
+            ibm_db.bind_param(stmt, 2, machine_id)
+            ibm_db.bind_param(stmt, 3, ip)
+            ibm_db.bind_param(stmt, 4, rssi)
+            ibm_db.bind_param(stmt, 5, x_acc)
+            ibm_db.bind_param(stmt, 6, y_acc)
+            ibm_db.bind_param(stmt, 7, z_acc)
+            ibm_db.bind_param(stmt, 8, max_x_acc)
+            ibm_db.bind_param(stmt, 9, max_y_acc)
+            ibm_db.bind_param(stmt, 10, max_z_acc)
+            ibm_db.bind_param(stmt, 11, min_x_acc)
+            ibm_db.bind_param(stmt, 12, min_y_acc)
+            ibm_db.bind_param(stmt, 13, min_z_acc)
+            ibm_db.bind_param(stmt, 14, x_z_ang)
+            ibm_db.bind_param(stmt, 15, y_z_ang)
+            ibm_db.bind_param(stmt, 16, max_x_z_ang)
+            ibm_db.bind_param(stmt, 17, max_y_z_ang)
+            ibm_db.bind_param(stmt, 18, min_x_z_ang)
+            ibm_db.bind_param(stmt, 19, min_y_z_ang)
+            ibm_db.bind_param(stmt, 20, temperature)
+
+            # 執行 SQL
+            ibm_db.execute(stmt)
+
+            # 關閉連接
+            ibm_db.close(conn)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            # mac_address = data['mac_address']
+            # correlation_id = data['correlation_id']
+            # x_acc = data['data']['x_acc']
+            # max_x_acc = data['data']['max_x_acc']
+            # y_acc = data['data']['y_acc']
+            # max_y_acc = data['data']['max_y_acc']
+            # z_acc = data['data']['z_acc']
+            # max_z_acc = data['data']['max_z_acc']
 
             # print(f"MAC Address: {mac_address}")
             # print(f"Correlation ID: {correlation_id}")
@@ -91,7 +182,7 @@ def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,
 def main():
     macAddress = sys.argv[1]
     # loging.log_message("")
-    # print(f"recieve macAddress:{macAddress}")
+    print(f"recieve macAddress:{macAddress}")
     sqlite_queue_config_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', 'queue'))
     
@@ -157,7 +248,6 @@ if __name__ == "__main__":
     mutex = ctypes.windll.kernel32.CreateMutexW(None, False, mutexname)
     rtn = ctypes.windll.kernel32.GetLastError()
     logprefix=service_name+"-"+sys.argv[1].replace(":","-")
-    # 檢查互斥體是否已存在
     # 檢查互斥體是否已存在
     if rtn == 183:
         print(f"程式已經在運行:{service_name}")

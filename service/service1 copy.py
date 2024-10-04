@@ -9,12 +9,10 @@ import time
 log_config_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..', 'log'))
 sys.path.append(log_config_path)
-
+import loging
 import loging  # 假设 loging 是自定义的模块，用于日志记录
 import paho.mqtt.client as mqtt
-import uuid
-import psutil
-import time
+
 # MQTT Broker 设置
 BROKER_ADDRESS = "localhost"
 PORT = 1883
@@ -22,7 +20,7 @@ USERNAME = "eason"
 PASSWORD = "qazwsx"
 
 # 定义最大线程数
-MAX_THREADS = 1  # 可以根据需求设置最大线程数
+MAX_THREADS = 5  # 可以根据需求设置最大线程数
 semaphore = threading.Semaphore(MAX_THREADS)
 # 定义锁
 lock = threading.Lock()
@@ -56,11 +54,11 @@ def processWaitTime(cursor):
     
 
 # 定义处理函数，这里放入线程中执行的逻辑
-def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,service_name):
+def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id):
     thread_id = threading.get_ident()
     print(f"Processing record in thread ID: {thread_id}")
     with semaphore:  # 使用信号量控制并发数量
-        # print(f"Thread started to process record: {t_stamp}, {macaddress}, {crr_id}")
+        print(f"Thread started to process record: {t_stamp}, {macaddress}, {crr_id}")
         try:
             data = json.loads(payload)
             mac_address = data['mac_address']
@@ -72,40 +70,33 @@ def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,
             z_acc = data['data']['z_acc']
             max_z_acc = data['data']['max_z_acc']
 
-            # print(f"MAC Address: {mac_address}")
-            # print(f"Correlation ID: {correlation_id}")
-            # print(f"x_acc: {x_acc}")
-            # print(f"max_x_acc: {max_x_acc}")
-            # print(f"y_acc: {y_acc}")
-            # print(f"max_y_acc: {max_y_acc}")
-            # print(f"z_acc: {z_acc}")
-            # print(f"max_z_acc: {max_z_acc}")
+            print(f"MAC Address: {mac_address}")
+            print(f"Correlation ID: {correlation_id}")
+            print(f"x_acc: {x_acc}")
+            print(f"max_x_acc: {max_x_acc}")
+            print(f"y_acc: {y_acc}")
+            print(f"max_y_acc: {max_y_acc}")
+            print(f"z_acc: {z_acc}")
+            print(f"max_z_acc: {max_z_acc}")
 
-            topic_request = "/".join(["response", "iot", macaddress, service_name])
+            topic_request = "/".join(["response", "iot", macaddress, "service1"])
             client.publish(topic_request, payload=payload, qos=1)
-            # print(f"Finished processing record: {t_stamp}, {macaddress}, {crr_id}")
+            print(f"Finished processing record: {t_stamp}, {macaddress}, {crr_id}")
 
         except json.JSONDecodeError as e:
             print(f"Error decoding payload: {payload}, error: {e}")
 
 def main():
     macAddress = sys.argv[1]
-    # loging.log_message("")
-    # print(f"recieve macAddress:{macAddress}")
+
     sqlite_queue_config_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', 'queue'))
-    
-    # 取得當前程式的完整路徑
+
     service_path = __file__
-
-    # 取得不包含副檔名的檔案名稱
     service_name = os.path.splitext(os.path.basename(service_path))[0]
-    logprefix=service_name+"-"+sys.argv[1].replace(":","-")
-    loging.log_message(f"uuid={uuid}",prefix=logprefix)
-    #print("程式名稱（不含副檔名）:", service_name)
 
+    # loging.log_message(f"uuid={uuid}", prefix=service_name)
 
-      # 指定 SQLite 資料庫文件的路徑
     db_path = "\\".join([sqlite_queue_config_path, service_name])
     db_path = ".".join([db_path, "db"])
 
@@ -132,12 +123,12 @@ def main():
             row = cursor.fetchone()
             if row:
                 t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id = row
-                # print(f"Processing record: {row}")
+                print(f"Processing record: {row}")
                 # 处理完后删除该记录
                 cursor.execute("DELETE FROM queue WHERE T_stamp = ?", (t_stamp,))
                 conn.commit()
                 # 创建并启动线程来处理记录，控制线程数量
-                thread = threading.Thread(target=process_record, args=(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,service_name))        
+                thread = threading.Thread(target=process_record, args=(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id))        
                 thread.start()
        
                 
@@ -156,23 +147,22 @@ if __name__ == "__main__":
     mutexname = "\\".join(["Global", service_name])
     mutex = ctypes.windll.kernel32.CreateMutexW(None, False, mutexname)
     rtn = ctypes.windll.kernel32.GetLastError()
-    logprefix=service_name+"-"+sys.argv[1].replace(":","-")
-    # 檢查互斥體是否已存在
+
     # 檢查互斥體是否已存在
     if rtn == 183:
-        print(f"程式已經在運行:{service_name}")
-        loging.log_message(f"程式已經在運行:{service_name}", prefix=logprefix)
+        print("程式已經在運行")
+        loging.log_message(f"程式已經在運行:{service_name}", prefix=service_name)
         sys.exit()
 
     try:
-        print(f"程式開始運行:{service_name}")
-        loging.log_message(f"程式開始運行:{service_name}", prefix=logprefix)
+        print("程式開始運行")
+        loging.log_message(f"程式開始運行:{service_name}", prefix=service_name)
         main()
     finally:
         ctypes.windll.kernel32.ReleaseMutex(mutex)
         ctypes.windll.kernel32.CloseHandle(mutex)
-        loging.log_message(f"程式結束:{service_name}", prefix=logprefix)
-        print(f"程式結束:{service_name}")
+        loging.log_message(f"程式結束:{service_name}", prefix=service_name)
+        print("程式結束")
 
 
 

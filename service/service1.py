@@ -1,18 +1,25 @@
 import sys
-import os
 import sqlite3
 import ctypes
 import json
 import threading
 import time
+import os
+os.add_dll_directory("C:\Program Files\IBM\SQLLIB\BIN")
+import ibm_db
+import traceback
+
+
 # 將 config 資料夾加入 Python 的搜尋路徑
 log_config_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..', 'log'))
 sys.path.append(log_config_path)
-import loging
+
 import loging  # 假设 loging 是自定义的模块，用于日志记录
 import paho.mqtt.client as mqtt
-
+import uuid
+import psutil
+import time
 # MQTT Broker 设置
 BROKER_ADDRESS = "localhost"
 PORT = 1883
@@ -20,7 +27,7 @@ USERNAME = "eason"
 PASSWORD = "qazwsx"
 
 # 定义最大线程数
-MAX_THREADS = 5  # 可以根据需求设置最大线程数
+MAX_THREADS = 1  # 可以根据需求设置最大线程数
 semaphore = threading.Semaphore(MAX_THREADS)
 # 定义锁
 lock = threading.Lock()
@@ -50,53 +57,161 @@ def processWaitTime(cursor):
     if count == 0:
         return True
     else:
-        return False   
+        return False
+
+def processData_db2(data):
+    try:
+        # 提取感測器數據
+        sensor_data = data['data']
+        sensor_id = sensor_data['SENSOR_ID']
+        machine_id = sensor_data['machine_ID']
+        ip = sensor_data['ip']
+        rssi = sensor_data['rssi']
+        x_acc = sensor_data['x_acc']
+        y_acc = sensor_data['y_acc']
+        z_acc = sensor_data['z_acc']
+        max_x_acc = sensor_data['max_x_acc']
+        max_y_acc = sensor_data['max_y_acc']
+        max_z_acc = sensor_data['max_z_acc']
+        min_x_acc = sensor_data['min_x_acc']
+        min_y_acc = sensor_data['min_y_acc']
+        min_z_acc = sensor_data['min_z_acc']
+        x_z_ang = sensor_data['x_z_ang']
+        y_z_ang = sensor_data['y_z_ang']
+        max_x_z_ang = sensor_data['max_x_z_ang']
+        max_y_z_ang = sensor_data['max_y_z_ang']
+        min_x_z_ang = sensor_data['min_x_z_ang']
+        min_y_z_ang = sensor_data['min_y_z_ang']
+        temperature = sensor_data['temperature']
+
+        # 連接到資料庫
+        # 設定資料庫連線參數
+        dsn_hostname = "172.27.10.10"  # e.g., "db2.example.com"
+        dsn_port = "50170"  # 通常是 50000
+        dsn_database = "HANNSFAB"  # e.g., "SAMPLE"
+        dsn_uid = "dhdcap3"  # DB2 使用者帳號
+        dsn_pwd = "dhdcap3888"  # DB2 使用者密碼
+
+        # 使用 DSN 字符串來建立連接
+        dsn = (
+            f"DATABASE={dsn_database};"
+            f"HOSTNAME={dsn_hostname};"
+            f"PORT={dsn_port};"
+            f"PROTOCOL=TCPIP;"
+            f"UID={dsn_uid};"
+            f"PWD={dsn_pwd};"
+        )
+
+        conn = ibm_db.connect(dsn, "", "")
+        print("Connected to DB2 database")
+
+        # 準備插入的 SQL 語句
+        sql = '''INSERT INTO AMHS.IOT_VIBRATION (
+            SENSOR_ID, machine_ID, ip, rssi, x_acc, y_acc, z_acc, 
+            max_x_acc, max_y_acc, max_z_acc, min_x_acc, min_y_acc, min_z_acc, 
+            x_z_ang, y_z_ang, max_x_z_ang, max_y_z_ang, min_x_z_ang, min_y_z_ang, temperature) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+        stmt = ibm_db.prepare(conn, sql)
+
+        # 綁定參數
+        ibm_db.bind_param(stmt, 1, sensor_id)
+        ibm_db.bind_param(stmt, 2, machine_id)
+        ibm_db.bind_param(stmt, 3, ip)
+        ibm_db.bind_param(stmt, 4, rssi)
+        ibm_db.bind_param(stmt, 5, x_acc)
+        ibm_db.bind_param(stmt, 6, y_acc)
+        ibm_db.bind_param(stmt, 7, z_acc)
+        ibm_db.bind_param(stmt, 8, max_x_acc)
+        ibm_db.bind_param(stmt, 9, max_y_acc)
+        ibm_db.bind_param(stmt, 10, max_z_acc)
+        ibm_db.bind_param(stmt, 11, min_x_acc)
+        ibm_db.bind_param(stmt, 12, min_y_acc)
+        ibm_db.bind_param(stmt, 13, min_z_acc)
+        ibm_db.bind_param(stmt, 14, x_z_ang)
+        ibm_db.bind_param(stmt, 15, y_z_ang)
+        ibm_db.bind_param(stmt, 16, max_x_z_ang)
+        ibm_db.bind_param(stmt, 17, max_y_z_ang)
+        ibm_db.bind_param(stmt, 18, min_x_z_ang)
+        ibm_db.bind_param(stmt, 19, min_y_z_ang)
+        ibm_db.bind_param(stmt, 20, temperature)
+
+        # 執行 SQL
+        ibm_db.execute(stmt)
+
+        # 關閉連接
+        ibm_db.close(conn)
+    except Exception  as e: 
+         print(f"An error occurred: {e}")
+         raise  
+    finally:
+        # 確保連接在完成後關閉
+        if conn:
+            ibm_db.close(conn)
+            print("Database connection closed.") 
     
 
 # 定义处理函数，这里放入线程中执行的逻辑
-def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id):
+def process_record(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,service_name):
     thread_id = threading.get_ident()
     print(f"Processing record in thread ID: {thread_id}")
     with semaphore:  # 使用信号量控制并发数量
-        print(f"Thread started to process record: {t_stamp}, {macaddress}, {crr_id}")
+        # print(f"Thread started to process record: {t_stamp}, {macaddress}, {crr_id}")
         try:
             data = json.loads(payload)
-            mac_address = data['mac_address']
-            correlation_id = data['correlation_id']
-            x_acc = data['data']['x_acc']
-            max_x_acc = data['data']['max_x_acc']
-            y_acc = data['data']['y_acc']
-            max_y_acc = data['data']['max_y_acc']
-            z_acc = data['data']['z_acc']
-            max_z_acc = data['data']['max_z_acc']
+            try:
+                processData_db2(data)
+            except Exception  as e:
+                print(f"An error occurred: {e}")
+                raise  
+           
+            
+            # mac_address = data['mac_address']
+            # correlation_id = data['correlation_id']
+            # x_acc = data['data']['x_acc']
+            # max_x_acc = data['data']['max_x_acc']
+            # y_acc = data['data']['y_acc']
+            # max_y_acc = data['data']['max_y_acc']
+            # z_acc = data['data']['z_acc']
+            # max_z_acc = data['data']['max_z_acc']
 
-            print(f"MAC Address: {mac_address}")
-            print(f"Correlation ID: {correlation_id}")
-            print(f"x_acc: {x_acc}")
-            print(f"max_x_acc: {max_x_acc}")
-            print(f"y_acc: {y_acc}")
-            print(f"max_y_acc: {max_y_acc}")
-            print(f"z_acc: {z_acc}")
-            print(f"max_z_acc: {max_z_acc}")
+            # print(f"MAC Address: {mac_address}")
+            # print(f"Correlation ID: {correlation_id}")
+            # print(f"x_acc: {x_acc}")
+            # print(f"max_x_acc: {max_x_acc}")
+            # print(f"y_acc: {y_acc}")
+            # print(f"max_y_acc: {max_y_acc}")
+            # print(f"z_acc: {z_acc}")
+            # print(f"max_z_acc: {max_z_acc}")
 
-            topic_request = "/".join(["response", "iot", macaddress, "service1"])
-            client.publish(topic_request, payload=payload, qos=1)
-            print(f"Finished processing record: {t_stamp}, {macaddress}, {crr_id}")
+            # topic_request = "/".join(["response", "iot", macaddress, service_name])
+            # client.publish(topic_request, payload=payload, qos=1)
+            # print(f"Finished processing record: {t_stamp}, {macaddress}, {crr_id}")
 
         except json.JSONDecodeError as e:
             print(f"Error decoding payload: {payload}, error: {e}")
+        finally:
+            # 確保連接在完成後關閉
+            topic_request = "/".join(["response", "iot", macaddress, service_name])
+            client.publish(topic_request, payload=payload, qos=1) 
 
 def main():
     macAddress = sys.argv[1]
-
+    # loging.log_message("")
+    print(f"recieve macAddress:{macAddress}")
     sqlite_queue_config_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', 'queue'))
-
+    
+    # 取得當前程式的完整路徑
     service_path = __file__
+
+    # 取得不包含副檔名的檔案名稱
     service_name = os.path.splitext(os.path.basename(service_path))[0]
+    logprefix=service_name+"-"+sys.argv[1].replace(":","-")
+    loging.log_message(f"uuid={uuid}",prefix=logprefix)
+    #print("程式名稱（不含副檔名）:", service_name)
 
-    # loging.log_message(f"uuid={uuid}", prefix=service_name)
 
+      # 指定 SQLite 資料庫文件的路徑
     db_path = "\\".join([sqlite_queue_config_path, service_name])
     db_path = ".".join([db_path, "db"])
 
@@ -123,12 +238,13 @@ def main():
             row = cursor.fetchone()
             if row:
                 t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id = row
-                print(f"Processing record: {row}")
+                # print(f"Processing record: {row}")
+                # print(f"Processing record: {row}")
                 # 处理完后删除该记录
                 cursor.execute("DELETE FROM queue WHERE T_stamp = ?", (t_stamp,))
                 conn.commit()
                 # 创建并启动线程来处理记录，控制线程数量
-                thread = threading.Thread(target=process_record, args=(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id))        
+                thread = threading.Thread(target=process_record, args=(t_stamp, macaddress, crr_id, payload, action_flg, act_crr_id,service_name))        
                 thread.start()
        
                 
@@ -147,22 +263,22 @@ if __name__ == "__main__":
     mutexname = "\\".join(["Global", service_name])
     mutex = ctypes.windll.kernel32.CreateMutexW(None, False, mutexname)
     rtn = ctypes.windll.kernel32.GetLastError()
-
+    logprefix=service_name+"-"+sys.argv[1].replace(":","-")
     # 檢查互斥體是否已存在
     if rtn == 183:
-        print("程式已經在運行")
-        loging.log_message(f"程式已經在運行:{service_name}", prefix=service_name)
+        print(f"程式已經在運行:{service_name}")
+        loging.log_message(f"程式已經在運行:{service_name}", prefix=logprefix)
         sys.exit()
 
     try:
-        print("程式開始運行")
-        loging.log_message(f"程式開始運行:{service_name}", prefix=service_name)
+        print(f"程式開始運行:{service_name}")
+        loging.log_message(f"程式開始運行:{service_name}", prefix=logprefix)
         main()
     finally:
         ctypes.windll.kernel32.ReleaseMutex(mutex)
         ctypes.windll.kernel32.CloseHandle(mutex)
-        loging.log_message(f"程式結束:{service_name}", prefix=service_name)
-        print("程式結束")
+        loging.log_message(f"程式結束:{service_name}", prefix=logprefix)
+        print(f"程式結束:{service_name}")
 
 
 

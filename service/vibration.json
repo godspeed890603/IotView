@@ -1,0 +1,26 @@
+{
+    "mac_address": "0C:8B:95:74:F5:B8",
+    "correlation_id": "correlation_id",
+    "data": {
+        "SENSOR_ID": "0C:8B:95:74:F5:B8",
+        "machine_ID": "AGV",
+        "ip": "172.27.17.22",
+        "rssi": -72,
+        "x_acc": 8.290728,
+        "y_acc": -9.02224,
+        "z_acc": 4.053939,
+        "max_x_acc": 8.300304,
+        "max_y_acc": -9.012662,
+        "max_z_acc": 4.077881,
+        "min_x_acc": 8.276362,
+        "min_y_acc": -9.043787,
+        "min_z_acc": 4.053939,
+        "x_z_ang": -53.64253,
+        "y_z_ang": -49.29472,
+        "max_x_z_ang": -53.5691,
+        "max_y_z_ang": -49.18776,
+        "min_x_z_ang": -53.69079,
+        "min_y_z_ang": -49.36634,
+        "temperature": 25.84176
+    }
+}

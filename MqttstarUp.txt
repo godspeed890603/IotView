@@ -8,6 +8,7 @@ listener 1883
 ./mosquitto.exe -c mosquitto.conf -v
 
 C:\"Program Files"\mosquitto\
+cd C:\"Program Files"\mosquitto\
 
 cd C:\UserData\Vscode\python\IotView\mqttTrigger
 

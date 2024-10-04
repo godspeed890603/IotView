@@ -134,7 +134,7 @@ class MQTTClient:
         try:
             exefullpath = os.path.join(serviceYamlSetting.SERVICE_PATH, executable)
             process = await asyncio.create_subprocess_exec(
-                "pythonw", exefullpath, macAddress
+                "python", exefullpath, macAddress
             )
             await process.communicate()
             loging.log_message(f"Service {executable} executed successfully")
