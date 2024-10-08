@@ -81,11 +81,29 @@ def checkQueue(service):
     # db_path = rf'{sqlite_queue_config_path}\{service}.db'
 
     # 檢查資料庫是否已經存在
-    db_exists = os.path.exists(db_path)
+    # db_exists = os.path.exists(db_path)
+
+    db_exists=False
+    try:
+            # 連接到 SQLite 資料庫（如果不存在則創建）
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM queue LIMIT 1")
+        row = cursor.fetchone()
+        if row:
+             print("")
+
+        db_exists=True
+    except Exception as e:
+            db_exists=False
+            loging.log_message(f"Queue db or table is not exist: {e}")
 
     # 連接到 SQLite 資料庫（如果不存在則創建）
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
+    # conn = sqlite3.connect(db_path)
+    # cursor = conn.cursor()
+    # cursor.execute("SELECT T_stamp, macaddress, crr_id, payload, action_flg, act_crr_id FROM queue LIMIT 1")
+    # row = cursor.fetchone()
+    # if row:
 
     # 如果資料庫不存在，創建資料表
     if not db_exists:
