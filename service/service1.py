@@ -27,7 +27,7 @@ USERNAME = "eason"
 PASSWORD = "qazwsx"
 
 # 定义最大线程数
-MAX_THREADS = 1  # 可以根据需求设置最大线程数
+MAX_THREADS = 2  # 可以根据需求设置最大线程数
 semaphore = threading.Semaphore(MAX_THREADS)
 # 定义锁
 lock = threading.Lock()
@@ -51,7 +51,7 @@ client.connect(BROKER_ADDRESS, PORT, keepalive=60)
 
 def processWaitTime(cursor):
     print("Queue is empty.")
-    time.sleep(0.5)
+    time.sleep(1)
     cursor.execute("SELECT COUNT(*) FROM queue")
     count = cursor.fetchone()[0]
     if count == 0:
@@ -145,9 +145,12 @@ def processData_db2(data):
          raise  
     finally:
         # 確保連接在完成後關閉
-        if conn:
-            ibm_db.close(conn)
-            print("Database connection closed.") 
+        try:
+            if conn:
+                ibm_db.close(conn)
+                print("Database connection closed.") 
+        except Exception  as e: 
+            print(f"An error occurred: {e}")        
     
 
 # 定义处理函数，这里放入线程中执行的逻辑
