@@ -72,7 +72,7 @@ class MQTTClient:
     def on_connect(self, client, userdata, flags, reason_code, properties=None):
         if reason_code == 0:
             loging.log_message("Connected to broker")  # 記錄成功連接日誌
-            client.subscribe(self.subscribe_topic, qos=2)  # 訂閱指定的主題，QOS 等級 2
+            client.subscribe(self.subscribe_topic, qos=1)  # 訂閱指定的主題，QOS 等級 2
             print(f"Subscribed to: {self.subscribe_topic}")
             time.sleep(0.5)
         else:

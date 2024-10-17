@@ -4,6 +4,9 @@
         "./com/comsub",
         "./com/comtrx",
         "./com/comsqlitetbl",
-        "./log"
+        "./log",
+        "./mqttclient",
+        "./db2connectionhandler",
+        "./SQLiteHandler"
     ]
 }

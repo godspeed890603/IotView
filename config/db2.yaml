@@ -1,0 +1,6 @@
+db2_config:
+  DATABASE: "HANNSFAB"
+  HOSTNAME:  "172.27.10.10"
+  PORT: "50170"
+  UID: "dhdcap3"
+  PWD: "dhdcap3888"
