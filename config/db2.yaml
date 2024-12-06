@@ -1,0 +1,6 @@
+db2_config:
+  DATABASE: "xxxxxx"
+  HOSTNAME:  "xxx.xx.xx.xx"
+  PORT: "50170"
+  UID: "dhdXXXX"
+  PWD: "dhdXXXX"
